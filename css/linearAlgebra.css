@@ -1,0 +1,700 @@
+/**
+ * OG - Linear Algebra Laboratory Stylesheet
+ * Strict OG Palette:
+ * - IVORY: #E8E0D2 (50% Main Surfaces & Backgrounds)
+ * - GOLD: #B89A5A (30% Accents, Active buttons, Highlights)
+ * - DEEP ATLAS NAVY: #0E1D61 (20% Structure, Typography, Display)
+ *
+ * Premium Liquid Glass Architecture
+ */
+
+/* ==========================================================================
+   WORKSPACE & HEADER
+   ========================================================================== */
+.la-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 20px 48px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.la-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: var(--radius-lg, 16px);
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  box-shadow: 0 8px 32px rgba(14, 29, 97, 0.05);
+}
+
+.la-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(184, 154, 90, 0.15);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #0E1D61;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.la-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #B89A5A;
+  box-shadow: 0 0 8px #B89A5A;
+}
+
+.la-subbadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(14, 29, 97, 0.6);
+  background: rgba(14, 29, 97, 0.06);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.la-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0E1D61;
+  margin: 4px 0;
+  letter-spacing: -0.02em;
+  font-family: var(--font-math, 'Outfit', sans-serif);
+}
+
+.la-subtitle {
+  font-size: 1.05rem;
+  color: rgba(14, 29, 97, 0.75);
+  margin: 0;
+  font-style: italic;
+  font-family: var(--font-math, 'Outfit', sans-serif);
+}
+
+.la-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.la-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-math, 'Outfit', sans-serif);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.la-btn-primary {
+  background: #0E1D61;
+  color: #E8E0D2;
+  box-shadow: 0 4px 14px rgba(14, 29, 97, 0.2);
+}
+
+.la-btn-primary:hover {
+  background: #071038;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(14, 29, 97, 0.3);
+}
+
+.la-btn-gold {
+  background: #B89A5A;
+  color: #0E1D61;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(184, 154, 90, 0.25);
+}
+
+.la-btn-gold:hover {
+  background: #c9ab6b;
+  transform: translateY(-1px);
+}
+
+.la-btn-outline {
+  background: rgba(246, 241, 233, 0.7);
+  color: #0E1D61;
+  border-color: rgba(184, 154, 90, 0.35);
+}
+
+.la-btn-outline:hover {
+  background: rgba(184, 154, 90, 0.15);
+  border-color: #B89A5A;
+}
+
+.la-btn-sm {
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+}
+
+.la-btn-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(14, 29, 97, 0.08);
+  color: #0E1D61;
+  border: 1px solid rgba(14, 29, 97, 0.15);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.la-btn-icon:hover {
+  background: #B89A5A;
+  border-color: #B89A5A;
+}
+
+/* ==========================================================================
+   UNIVERSAL LINEAR ALGEBRA INPUT
+   ========================================================================== */
+.la-universal-card {
+  padding: 20px 24px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.la-universal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.la-universal-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.la-universal-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.la-universal-input {
+  flex: 1;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #0E1D61;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.la-universal-input:focus {
+  outline: none;
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.2);
+}
+
+.la-suggestions-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.la-suggestions-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(14, 29, 97, 0.6);
+}
+
+.la-suggestion-chip {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.la-suggestion-chip:hover {
+  background: rgba(184, 154, 90, 0.2);
+  border-color: #B89A5A;
+}
+
+/* ==========================================================================
+   MATRIX CALCULATOR & LAB
+   ========================================================================== */
+.la-matrix-lab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .la-matrix-lab-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.la-matrix-card {
+  padding: 22px 24px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.la-matrix-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.2);
+  padding-bottom: 12px;
+}
+
+.la-matrix-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0E1D61;
+}
+
+.la-matrix-dim-badge {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(184, 154, 90, 0.18);
+  color: #0E1D61;
+}
+
+.la-matrix-dim-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.la-dim-tag {
+  font-size: 0.8rem;
+  color: rgba(14, 29, 97, 0.7);
+  font-weight: 600;
+}
+
+/* Matrix Bracket Liquid Glass Presentation */
+.la-matrix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  border: 1px solid rgba(184, 154, 90, 0.2);
+}
+
+.la-matrix-bracket-wrap {
+  display: flex;
+  position: relative;
+  padding: 6px 14px;
+}
+
+.la-matrix-bracket-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  border-left: 3px solid #0E1D61;
+  border-top: 3px solid #0E1D61;
+  border-bottom: 3px solid #0E1D61;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.la-matrix-bracket-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  border-right: 3px solid #0E1D61;
+  border-top: 3px solid #0E1D61;
+  border-bottom: 3px solid #0E1D61;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.la-matrix-grid {
+  display: grid;
+  gap: 8px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 4px;
+}
+
+.la-matrix-cell-input {
+  width: 60px;
+  height: 44px;
+  text-align: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: #ffffff;
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.la-matrix-cell-input:focus {
+  outline: none;
+  border-color: #B89A5A;
+  background: #fdfbf7;
+  box-shadow: 0 0 0 2px rgba(184, 154, 90, 0.3);
+}
+
+.la-matrix-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ==========================================================================
+   OPERATIONS TOOLBAR
+   ========================================================================== */
+.la-ops-card {
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.la-ops-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0E1D61;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.la-ops-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.la-op-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  color: #0E1D61;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--font-math, 'Outfit', sans-serif);
+}
+
+.la-op-btn:hover {
+  background: rgba(184, 154, 90, 0.2);
+  border-color: #B89A5A;
+}
+
+.la-op-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+}
+
+/* ==========================================================================
+   RESULT & DERIVATION PANELS
+   ========================================================================== */
+.la-result-card {
+  padding: 24px 28px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.la-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.2);
+  padding-bottom: 12px;
+}
+
+.la-result-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0E1D61;
+}
+
+.la-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(14, 29, 97, 0.06);
+  padding: 3px 6px;
+  border-radius: 8px;
+}
+
+.la-mode-btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: rgba(14, 29, 97, 0.7);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.la-mode-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+}
+
+.la-result-display-box {
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Properties Card */
+.la-props-card {
+  padding: 20px 24px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.la-props-header {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0E1D61;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.la-props-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.la-prop-item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.la-prop-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.la-prop-desc {
+  font-size: 0.78rem;
+  color: rgba(14, 29, 97, 0.65);
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   MODULES NAVIGATION GRID
+   ========================================================================== */
+.la-modules-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.la-modules-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.la-modules-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0E1D61;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.la-modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.la-module-card {
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.la-module-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #B89A5A;
+  box-shadow: 0 8px 24px rgba(184, 154, 90, 0.15);
+}
+
+.la-module-num {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #B89A5A;
+}
+
+.la-module-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.la-module-desc {
+  font-size: 0.82rem;
+  color: rgba(14, 29, 97, 0.65);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   DERIVATION STAGES (7-STAGE STANDARD)
+   ========================================================================== */
+.la-stages-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.la-stage-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+}
+
+.la-stage-num {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #B89A5A;
+  background: rgba(184, 154, 90, 0.15);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.la-stage-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.la-stage-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(14, 29, 97, 0.6);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.la-stage-text {
+  font-size: 0.95rem;
+  color: #0E1D61;
+  line-height: 1.4;
+}
+
+/* Error box */
+.la-error-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #b91c1c;
+}

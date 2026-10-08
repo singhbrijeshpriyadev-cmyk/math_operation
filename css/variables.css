@@ -1,0 +1,161 @@
+/* ==========================================================================
+   OG - Mathematics Architecture & Learning Platform
+   Premium Ivory + Gold + Deep Atlas Navy Liquid Glass Design Tokens
+   50% Ivory (#E8E0D2) | 30% Gold (#B89A5A) | 20% Deep Atlas Navy (#0E1D61)
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. Primary Brand Color System (Strict Triad)
+     ------------------------------------------------------------------------ */
+  --color-ivory: #E8E0D2;             /* ~50% Main Surfaces & Backgrounds */
+  --color-ivory-light: #F4EFE6;       /* Elevated Ivory Surfaces */
+  --color-ivory-dark: #DDD4C3;        /* Recessed Ivory Borders/Tints */
+  --color-gold: #B89A5A;              /* ~30% Accents, CTAs, Highlights, Math */
+  --color-gold-hover: #A58748;        /* Refined Darker Gold on Hover */
+  --color-gold-bright: #CBB070;       /* Specular Gold Light */
+  --color-gold-light: rgba(184, 154, 90, 0.16);
+  --color-gold-glow: rgba(184, 154, 90, 0.32);
+  --color-navy: #0E1D61;              /* ~20% Typography, Major Headings, Display */
+  --color-navy-dark: #071038;         /* High-Contrast Navy */
+  --color-navy-light: rgba(14, 29, 97, 0.08);
+
+  /* Application Backgrounds */
+  --bg-primary: #E8E0D2;
+  --bg-secondary: #E3DBD0;
+  --bg-space: #E8E0D2;
+  --bg-tertiary: #DDD4C3;
+  --bg-surface-elevated: #F5EFE6;
+  --bg-navy-surface: #0E1D61;
+
+  /* ------------------------------------------------------------------------
+     2. Light Liquid Glass Tiers
+     ------------------------------------------------------------------------ */
+  --glass-light: rgba(232, 224, 210, 0.50);
+  --glass-medium: rgba(232, 224, 210, 0.65);
+  --glass-heavy: rgba(244, 239, 230, 0.85);
+  --glass-elevated-bg: rgba(246, 242, 235, 0.92);
+  --glass-interactive-bg: rgba(238, 231, 220, 0.75);
+  --glass-active-bg: rgba(184, 154, 90, 0.22);
+
+  --glass-border: rgba(184, 154, 90, 0.25);
+  --glass-border-subtle: rgba(184, 154, 90, 0.16);
+  --glass-border-bright: rgba(184, 154, 90, 0.42);
+  --glass-border-highlight: #B89A5A;
+  --glass-border-navy: rgba(14, 29, 97, 0.20);
+
+  /* ------------------------------------------------------------------------
+     3. Typography Tokens
+     ------------------------------------------------------------------------ */
+  --text-primary: #0E1D61;            /* Deep Atlas Navy */
+  --text-secondary: rgba(14, 29, 97, 0.75);
+  --text-tertiary: rgba(14, 29, 97, 0.52);
+  --text-white: #0E1D61;              /* Legacy alias -> Deep Atlas Navy */
+  --text-muted: rgba(14, 29, 97, 0.50);
+  --text-disabled: rgba(14, 29, 97, 0.35);
+
+  /* On-Navy Contrast Typography */
+  --text-on-navy: #E8E0D2;
+  --text-on-navy-secondary: rgba(232, 224, 210, 0.78);
+  --text-on-navy-muted: rgba(232, 224, 210, 0.55);
+  --text-gold: #B89A5A;
+
+  /* ------------------------------------------------------------------------
+     4. Accents & Category Aliases (Unified Luxury Palette)
+     ------------------------------------------------------------------------ */
+  --accent-gold: #B89A5A;
+  --accent-navy: #0E1D61;
+  --accent-cyan: #B89A5A;             /* Legacy mappings mapped to Gold */
+  --accent-blue: #0E1D61;             /* Legacy mapped to Deep Atlas Navy */
+  --accent-violet: #B89A5A;
+  --accent-indigo: #0E1D61;
+  --accent-emerald: #B89A5A;
+  --accent-rose: #B89A5A;
+  --accent-amber: #B89A5A;
+
+  --cyan-primary: #B89A5A;            /* Primary Gold Accent */
+  --cyan-secondary: #0E1D61;          /* Deep Atlas Navy */
+  --indigo-primary: #0E1D61;
+  --indigo-secondary: #B89A5A;
+  --violet-primary: #B89A5A;
+  --emerald-primary: #B89A5A;
+  --emerald-secondary: #0E1D61;
+  --rose-primary: #B89A5A;
+  --amber-primary: #B89A5A;
+
+  /* Category Uniformity */
+  --cat-algebra: #B89A5A;
+  --cat-geometry: #B89A5A;
+  --cat-calculus: #B89A5A;
+  --cat-stats: #B89A5A;
+  --cat-linear: #B89A5A;
+  --cat-vectors: #B89A5A;
+
+  /* ------------------------------------------------------------------------
+     5. Spatial Shadows, Glass Filters & Ambient Glows
+     ------------------------------------------------------------------------ */
+  --blur-glass: 24px;
+  --blur-glass-sm: 14px;
+  --blur-glass-lg: 32px;
+  --glass-saturation: 120%;
+
+  --shadow-glass: 0 12px 40px rgba(14, 29, 97, 0.08),
+                  0 0 0 1px var(--glass-border) inset;
+  --shadow-glass-elevated: 0 20px 50px rgba(14, 29, 97, 0.12),
+                           0 0 0 1px var(--glass-border-bright) inset;
+  --shadow-subtle: 0 4px 18px rgba(14, 29, 97, 0.06);
+  --shadow-glow-cyan: 0 0 25px rgba(184, 154, 90, 0.35);
+  --shadow-glow-violet: 0 0 25px rgba(184, 154, 90, 0.35);
+  --shadow-glow-gold: 0 0 25px rgba(184, 154, 90, 0.38);
+
+  /* Ambient Gradient Light Sources (Subtle Ivory, Gold, Navy) */
+  --ambient-gold: rgba(184, 154, 90, 0.14);
+  --ambient-navy: rgba(14, 29, 97, 0.07);
+  --ambient-cyan: rgba(184, 154, 90, 0.14);
+  --ambient-indigo: rgba(14, 29, 97, 0.08);
+  --ambient-violet: rgba(184, 154, 90, 0.10);
+  --ambient-emerald: rgba(184, 154, 90, 0.08);
+
+  /* Specular Glare (Light luxury top sheen) */
+  --glass-specular: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.70) 0%,
+    rgba(184, 154, 90, 0.30) 45%,
+    rgba(255, 255, 255, 0.00) 100%
+  );
+
+  /* Backward Compatibility Aliases */
+  --glass-bg-subtle: var(--glass-light);
+  --glass-bg-surface: var(--glass-medium);
+  --glass-bg-elevated: var(--glass-heavy);
+  --glass-bg-interactive: var(--glass-interactive-bg);
+  --glass-bg-active: var(--glass-active-bg);
+  --glass-border-medium: var(--glass-border);
+  --glass-blur-sm: var(--blur-glass-sm);
+  --glass-blur-md: var(--blur-glass);
+  --glass-blur-lg: var(--blur-glass-lg);
+  --glass-blur-xl: 36px;
+
+  /* ------------------------------------------------------------------------
+     6. Typography & Layout Metrics
+     ------------------------------------------------------------------------ */
+  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-math: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, monospace;
+  --font-mono: var(--font-math);
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 30px;
+  --radius-pill: 9999px;
+  --radius-full: 9999px;
+
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 380ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --nav-height-desktop: 72px;
+  --nav-height-mobile: 68px;
+  --max-content-width: 1320px;
+}

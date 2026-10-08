@@ -1,0 +1,230 @@
+/* ==========================================================================
+   OG - Global Styles & Ambient Mathematical Environment
+   Light Liquid Glass System (Ivory + Gold + Deep Atlas Navy)
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-space);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-space);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(184, 154, 90, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 88% 20%, rgba(14, 29, 97, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 45% 85%, rgba(184, 154, 90, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 80% 92%, rgba(14, 29, 97, 0.06) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* Mathematical Grid Overlay (Delicate Ivory & Gold Grid) */
+.math-grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-size: 54px 54px;
+  background-image: 
+    linear-gradient(to right, rgba(184, 154, 90, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(184, 154, 90, 0.06) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 95% 85% at 50% 35%, black 25%, transparent 95%);
+}
+
+/* Ambient Glowing Light Orbs (Refined Gold & Navy Light Pools) */
+.ambient-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.ambient-glow-1 {
+  width: 540px;
+  height: 540px;
+  top: -120px;
+  left: -80px;
+  background: radial-gradient(circle, var(--ambient-gold), transparent 70%);
+  animation: pulseGlow 18s ease-in-out infinite alternate;
+}
+
+.ambient-glow-2 {
+  width: 620px;
+  height: 620px;
+  top: 15%;
+  right: -140px;
+  background: radial-gradient(circle, var(--ambient-navy), transparent 70%);
+  animation: pulseGlow 22s ease-in-out infinite alternate-reverse;
+}
+
+.ambient-glow-3 {
+  width: 480px;
+  height: 480px;
+  bottom: 5%;
+  left: 20%;
+  background: radial-gradient(circle, rgba(184, 154, 90, 0.12), transparent 70%);
+  animation: pulseGlow 26s ease-in-out infinite alternate;
+}
+
+/* Floating Mathematical Symbols Container */
+.floating-symbols-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+.float-symbol {
+  position: absolute;
+  font-family: var(--font-math);
+  color: rgba(14, 29, 97, 0.07);
+  font-weight: 500;
+  will-change: transform, opacity;
+}
+
+/* Typography Hierarchy - Deep Atlas Navy */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-navy);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-navy);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--color-navy);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  color: var(--color-navy);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Accessibility Focus Ring - Gold */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  box-shadow: 0 0 15px rgba(184, 154, 90, 0.45) !important;
+}
+
+/* Custom Scrollbar - Ivory & Gold */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-space);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 154, 90, 0.35);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--bg-space);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 154, 90, 0.6);
+}
+
+/* App Root Layout */
+#app {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: calc(var(--nav-height-desktop) + 24px) 24px 80px;
+}
+
+/* Category Badges - Ivory Glass + Gold Border + Deep Navy Text */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(244, 239, 230, 0.75);
+  color: var(--color-navy);
+  border: 1px solid var(--glass-border);
+}
+
+.badge-algebra,
+.badge-geometry,
+.badge-calculus,
+.badge-stats,
+.badge-linear,
+.badge-vectors {
+  color: var(--color-navy);
+  background: rgba(184, 154, 90, 0.14);
+  border-color: rgba(184, 154, 90, 0.35);
+}
+
+/* Gradient Text Helper - Deep Atlas Navy with Gold specular sheen */
+.gradient-text-gold,
+.gradient-text-cyan,
+.gradient-text-indigo {
+  background: linear-gradient(135deg, #0E1D61 0%, #1A2E8A 60%, #B89A5A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

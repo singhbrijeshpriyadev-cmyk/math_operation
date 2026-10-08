@@ -1,0 +1,540 @@
+/* ==========================================================================
+   OG - Module 01: Sets Styling (Light Liquid Glass System)
+   Ivory (#E8E0D2) + Gold (#B89A5A) + Deep Atlas Navy (#0E1D61)
+   ========================================================================== */
+
+.sets-module-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero & Header
+   -------------------------------------------------------------------------- */
+.sets-hero-card {
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(242, 236, 227, 0.78);
+}
+
+.sets-hero-card::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(184, 154, 90, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Input Section & Preset Chips
+   -------------------------------------------------------------------------- */
+.sets-input-card {
+  padding: 28px;
+  border-radius: var(--radius-xl);
+  background: rgba(240, 234, 224, 0.75);
+}
+
+.sets-inputs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .sets-inputs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.set-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.set-field-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0E1D61;
+}
+
+.set-input-box {
+  width: 100%;
+  padding: 14px 18px;
+  font-family: var(--font-math);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(184, 154, 90, 0.3);
+  color: #0E1D61;
+  transition: all var(--transition-fast);
+}
+
+.set-input-box:focus {
+  outline: none;
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.22);
+}
+
+/* Presets Bar */
+.sets-presets-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(184, 154, 90, 0.18);
+}
+
+.sets-preset-chip {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sets-preset-chip:hover {
+  background: #B89A5A;
+  color: #0E1D61;
+  border-color: #B89A5A;
+  transform: translateY(-2px);
+}
+
+.sets-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Operations Navigation Tabs
+   -------------------------------------------------------------------------- */
+.sets-operations-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 4px 14px 4px;
+  scrollbar-width: thin;
+}
+
+.sets-op-tab {
+  white-space: nowrap;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-family: var(--font-math);
+  background: rgba(244, 239, 230, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sets-op-tab:hover {
+  background: rgba(246, 241, 233, 0.95);
+  color: #0E1D61;
+  border-color: #B89A5A;
+  transform: translateY(-2px);
+}
+
+.sets-op-tab.active {
+  background: #B89A5A;
+  color: #0E1D61;
+  border-color: #B89A5A;
+  box-shadow: 0 4px 18px rgba(184, 154, 90, 0.35);
+}
+
+.sets-op-tab .op-tag {
+  font-size: 0.72rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  background: rgba(14, 29, 97, 0.12);
+  color: #0E1D61;
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+.sets-op-tab.active .op-tag {
+  background: #0E1D61;
+  color: #E8E0D2;
+}
+
+/* --------------------------------------------------------------------------
+   Workspace Split: Visualizer & Active Operation Result
+   -------------------------------------------------------------------------- */
+.sets-workspace-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+}
+
+@media (max-width: 1080px) {
+  .sets-workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Venn Diagram Visualizer Card
+   -------------------------------------------------------------------------- */
+.venn-card {
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(240, 234, 224, 0.75);
+}
+
+.venn-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.venn-card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0E1D61;
+}
+
+.venn-svg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  overflow: visible;
+  filter: drop-shadow(0 8px 24px rgba(14, 29, 97, 0.08));
+}
+
+/* Venn Labels */
+.venn-label-u {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  fill: #0E1D61;
+  letter-spacing: 0.05em;
+}
+
+.venn-cardinality-tag {
+  font-family: var(--font-math);
+  font-size: 12px;
+  fill: rgba(14, 29, 97, 0.6);
+}
+
+.venn-circle-title {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.venn-circle-title.title-a {
+  fill: #B89A5A;
+}
+
+.venn-circle-title.title-b {
+  fill: #0E1D61;
+}
+
+.venn-circle-sub {
+  font-family: var(--font-math);
+  font-size: 11px;
+  fill: rgba(14, 29, 97, 0.6);
+}
+
+.venn-intersection-title {
+  font-family: var(--font-math);
+  font-size: 13px;
+  font-weight: 700;
+  fill: #B89A5A;
+}
+
+.venn-elements-label {
+  font-family: var(--font-math);
+  font-size: 14px;
+  font-weight: 800;
+  fill: #0E1D61;
+}
+
+.venn-count-badge {
+  font-family: var(--font-math);
+  font-size: 11px;
+  fill: rgba(14, 29, 97, 0.7);
+}
+
+.venn-elements-outside-text {
+  font-family: var(--font-math);
+  font-size: 12px;
+  fill: rgba(14, 29, 97, 0.5);
+}
+
+.venn-legend-text {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  fill: #0E1D61;
+}
+
+.venn-region {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.venn-region:hover {
+  filter: brightness(1.1);
+}
+
+/* Venn Stats Bar */
+.venn-region-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+@media (max-width: 640px) {
+  .venn-region-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.region-stat {
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.region-stat.active {
+  background: rgba(184, 154, 90, 0.2);
+  border-color: #B89A5A;
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.2);
+}
+
+.region-stat .region-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.region-dot.dot-a { background: #B89A5A; }
+.region-dot.dot-ab { background: #B89A5A; }
+.region-dot.dot-b { background: #0E1D61; }
+.region-dot.dot-u { background: #B89A5A; }
+
+.region-stat .region-name {
+  color: rgba(14, 29, 97, 0.65);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.region-stat .region-val {
+  font-family: var(--font-math);
+  color: #0E1D61;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --------------------------------------------------------------------------
+   Active Result Display & Steps Card
+   -------------------------------------------------------------------------- */
+.sets-result-card {
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(240, 234, 224, 0.75);
+}
+
+.result-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.result-operation-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #0E1D61;
+}
+
+.result-formula-badge {
+  display: inline-block;
+  font-family: var(--font-math);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: rgba(184, 154, 90, 0.18);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  margin-top: 6px;
+}
+
+/* Main Value Box: Deep Atlas Navy Glass Panel with Gold Text */
+.result-main-value-box {
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: #0E1D61;
+  border: 1.5px solid rgba(184, 154, 90, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(14, 29, 97, 0.18);
+}
+
+.result-text {
+  font-family: var(--font-math);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #E8E0D2;
+  word-break: break-word;
+  line-height: 1.4;
+  text-shadow: 0 0 16px rgba(184, 154, 90, 0.3);
+}
+
+.result-cardinality-chip {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-math);
+  font-size: 0.85rem;
+  font-weight: 800;
+  background: rgba(184, 154, 90, 0.25);
+  border: 1px solid #B89A5A;
+  color: #B89A5A;
+  white-space: nowrap;
+}
+
+/* Step by Step Breakdown: Ivory glass cards + Gold left border */
+.sets-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sets-step-item {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-left: 4px solid #B89A5A;
+  font-size: 0.92rem;
+  color: #0E1D61;
+  line-height: 1.55;
+  font-family: var(--font-sans);
+}
+
+.sets-step-item strong {
+  color: #0E1D61;
+}
+
+/* --------------------------------------------------------------------------
+   All-Operations Matrix Grid
+   -------------------------------------------------------------------------- */
+.sets-matrix-section {
+  margin-top: 10px;
+}
+
+.sets-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.matrix-card {
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  background: rgba(240, 234, 224, 0.72);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+}
+
+.matrix-card:hover {
+  transform: translateY(-3px);
+  background: rgba(246, 241, 233, 0.9);
+  border-color: #B89A5A;
+  box-shadow: 0 10px 24px rgba(14, 29, 97, 0.08), 0 0 14px rgba(184, 154, 90, 0.2);
+}
+
+.matrix-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.matrix-card-symbol {
+  font-family: var(--font-math);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0E1D61;
+}
+
+.matrix-card-desc {
+  font-size: 0.78rem;
+  color: rgba(14, 29, 97, 0.6);
+}
+
+.matrix-card-value {
+  font-family: var(--font-math);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0E1D61;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.matrix-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgba(14, 29, 97, 0.6);
+  padding-top: 8px;
+  border-top: 1px solid rgba(184, 154, 90, 0.18);
+}

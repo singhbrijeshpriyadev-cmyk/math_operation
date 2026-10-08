@@ -1,0 +1,516 @@
+/* ==========================================================================
+   OG - Production Dashboard & Layout Styles
+   Light Liquid Glass (Ivory + Gold + Deep Atlas Navy)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero Section & Mathematical Ambient Orbit
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 68px 0 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  overflow: visible;
+}
+
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  background: rgba(244, 239, 230, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.38);
+  box-shadow: 0 4px 18px rgba(14, 29, 97, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #B89A5A;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-pill-badge .sparkle {
+  font-size: 0.95rem;
+  color: #B89A5A;
+  animation: rotateSparkle 8s linear infinite;
+}
+
+.hero-title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-brand {
+  font-size: clamp(3.8rem, 8.5vw, 6.8rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #0E1D61;
+  text-shadow: 0 2px 20px rgba(184, 154, 90, 0.2);
+  margin-bottom: 2px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+  font-weight: 700;
+  color: #0E1D61;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  max-width: 660px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(14, 29, 97, 0.78);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+/* Floating Mathematical Orbit Glyphs Around Hero */
+.hero-orbit-container {
+  position: absolute;
+  inset: -20px -40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-orbit-glyph {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(244, 239, 230, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(184, 154, 90, 0.28);
+  font-family: var(--font-math);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #0E1D61;
+  box-shadow: 0 8px 24px rgba(14, 29, 97, 0.06);
+  user-select: none;
+  /* Multi-step easing gives a natural gentle float — not a robotic sine */
+  animation: floatDrift1 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.hero-orbit-glyph-1 {
+  top: 10%;
+  left: 4%;
+  animation-duration: 19s;
+  animation-delay: -2s;
+  color: #B89A5A;
+  border-color: rgba(184, 154, 90, 0.45);
+}
+
+.hero-orbit-glyph-2 {
+  top: 15%;
+  right: 6%;
+  animation-duration: 22s;
+  animation-delay: -7s;
+  animation-name: floatDrift2;
+  color: #0E1D61;
+  border-color: rgba(14, 29, 97, 0.25);
+}
+
+.hero-orbit-glyph-3 {
+  bottom: 12%;
+  left: 6%;
+  animation-duration: 25s;
+  animation-delay: -4s;
+  animation-name: floatDrift3;
+  color: #B89A5A;
+  border-color: rgba(184, 154, 90, 0.4);
+}
+
+.hero-orbit-glyph-4 {
+  bottom: 8%;
+  right: 5%;
+  animation-duration: 17s;
+  animation-delay: -11s;
+  color: #0E1D61;
+  border-color: rgba(14, 29, 97, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   2. Quick Tools Grid Section
+   Cards: Ivory glass, Deep Atlas Navy text, Gold hover border & reflection
+   -------------------------------------------------------------------------- */
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 52px 0 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-title-wrap h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 1.85rem;
+  color: #0E1D61;
+}
+
+.section-title-wrap h2::after {
+  content: '';
+  width: 44px;
+  height: 3px;
+  border-radius: 2px;
+  background: #B89A5A;
+}
+
+.section-title-wrap p {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: rgba(14, 29, 97, 0.72);
+}
+
+.quick-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.quick-tool-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  background: rgba(240, 234, 224, 0.72);
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: 0 10px 32px rgba(14, 29, 97, 0.07);
+  transition: transform var(--transition-normal), 
+              border-color var(--transition-normal), 
+              box-shadow var(--transition-normal),
+              background var(--transition-normal);
+  overflow: hidden;
+}
+
+.quick-tool-card:hover {
+  transform: translateY(-4px);
+  background: rgba(246, 241, 233, 0.90);
+  border-color: #B89A5A;
+  box-shadow: 0 18px 46px rgba(14, 29, 97, 0.12),
+              0 0 20px rgba(184, 154, 90, 0.25);
+}
+
+.quick-tool-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: rgba(184, 154, 90, 0.15);
+  border: 1.5px solid #B89A5A;
+  color: #0E1D61;
+  margin-bottom: 16px;
+  transition: transform var(--transition-normal), background var(--transition-normal);
+}
+
+.quick-tool-card:hover .quick-tool-icon-wrap {
+  transform: scale(1.08) rotate(2deg);
+  background: #B89A5A;
+  color: #0E1D61;
+  box-shadow: 0 0 16px rgba(184, 154, 90, 0.4);
+}
+
+.quick-tool-info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #0E1D61;
+}
+
+.quick-tool-info p {
+  font-size: 0.88rem;
+  color: rgba(14, 29, 97, 0.72);
+  line-height: 1.55;
+}
+
+.quick-tool-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(184, 154, 90, 0.18);
+}
+
+.quick-tool-action {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.quick-tool-arrow {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 154, 90, 0.18);
+  color: #0E1D61;
+  transition: all var(--transition-normal);
+}
+
+.quick-tool-card:hover .quick-tool-arrow {
+  background: #B89A5A;
+  color: #0E1D61;
+  transform: translateX(4px);
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   3. Featured Modules Grid
+   -------------------------------------------------------------------------- */
+.featured-modules-container {
+  margin-top: 48px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Production Dashboard Split Grid
+   -------------------------------------------------------------------------- */
+.dashboard-grid-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+/* Activity Panel */
+.activity-panel {
+  border-radius: var(--radius-xl);
+  background: rgba(242, 236, 227, 0.75);
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.22);
+  transition: all var(--transition-fast);
+  gap: 14px;
+}
+
+.activity-item:hover {
+  background: #FFFFFF;
+  border-color: #B89A5A;
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(14, 29, 97, 0.08);
+}
+
+.activity-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.activity-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activity-module-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0E1D61;
+  background: rgba(184, 154, 90, 0.18);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.activity-time-tag {
+  font-size: 0.75rem;
+  color: rgba(14, 29, 97, 0.55);
+  font-family: var(--font-math);
+}
+
+.activity-expr {
+  font-family: var(--font-math);
+  font-size: 1rem;
+  color: #0E1D61;
+  word-break: break-all;
+}
+
+.activity-result-badge {
+  font-family: var(--font-math);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #B89A5A;
+  flex-shrink: 0;
+}
+
+/* Empty State UI Component */
+.empty-state-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 36px 20px;
+  border: 1.5px dashed rgba(184, 154, 90, 0.35);
+  border-radius: var(--radius-lg);
+  background: rgba(246, 241, 233, 0.5);
+  gap: 12px;
+}
+
+.empty-state-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 154, 90, 0.15);
+  font-size: 1.4rem;
+  color: #0E1D61;
+  font-family: var(--font-math);
+}
+
+.empty-state-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.empty-state-desc {
+  font-size: 0.88rem;
+  color: rgba(14, 29, 97, 0.72);
+  max-width: 380px;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   5. Formula of the Day Card
+   -------------------------------------------------------------------------- */
+.formula-of-day-card {
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(242, 236, 227, 0.75);
+}
+
+.formula-of-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formula-display-box {
+  background: #0E1D61;
+  border: 1.5px solid rgba(184, 154, 90, 0.4);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  box-shadow: 0 8px 24px rgba(14, 29, 97, 0.2);
+}
+
+.formula-math-text {
+  font-family: var(--font-math);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  color: #E8E0D2;
+  text-shadow: 0 0 16px rgba(184, 154, 90, 0.4);
+  word-break: break-all;
+}
+
+.formula-meaning-text {
+  font-size: 0.9rem;
+  color: rgba(14, 29, 97, 0.78);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   6. Practice Progress Card
+   -------------------------------------------------------------------------- */
+.practice-progress-card {
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(242, 236, 227, 0.75);
+}
+
+.practice-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-track-large {
+  width: 100%;
+  height: 10px;
+  background: rgba(184, 154, 90, 0.2);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill-real {
+  height: 100%;
+  background: #B89A5A;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.4);
+  transition: width 1.0s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}

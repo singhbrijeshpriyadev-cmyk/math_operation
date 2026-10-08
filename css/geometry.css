@@ -1,0 +1,1573 @@
+/**
+ * OG — Coordinate Geometry Workspace CSS
+ * Ivory (#E8E0D2) + Gold (#B89A5A) + Deep Atlas Navy (#0E1D61) Liquid Glass Design
+ * All classes prefixed with `geom-`
+ */
+
+/* ═══════════════════════════════════════════════════════════════════
+   1. MAIN WORKSPACE CONTAINER
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-workspace {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px 64px 24px;
+  min-height: calc(100vh - 80px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   2. HEADER
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.geom-header-text {
+  flex: 1;
+}
+
+.geom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill, 9999px);
+  background: rgba(184, 154, 90, 0.15);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #B89A5A;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.geom-title {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #0E1D61;
+  letter-spacing: -0.025em;
+  margin: 0 0 6px 0;
+  line-height: 1.1;
+}
+
+.geom-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary, rgba(14, 29, 97, 0.72));
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   3. UNIVERSAL GEOMETRY INPUT & SOLVER PANEL
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-solver-panel {
+  padding: 24px 28px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(184, 154, 90, 0.32);
+  background: rgba(246, 241, 233, 0.88);
+  box-shadow: 0 12px 40px rgba(14, 29, 97, 0.07);
+  border-radius: 20px;
+}
+
+.geom-solver-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.geom-solver-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.geom-solver-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(184, 154, 90, 0.14);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #B89A5A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+}
+
+.geom-mode-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #B89A5A;
+  background: rgba(184, 154, 90, 0.12);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill, 9999px);
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono, monospace);
+}
+
+.geom-input-row {
+  margin-bottom: 16px;
+}
+
+.geom-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.geom-input-symbol {
+  position: absolute;
+  left: 18px;
+  color: #B89A5A;
+  font-family: var(--font-math, serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+}
+
+.geom-main-input {
+  width: 100%;
+  height: 56px;
+  padding: 0 48px 0 52px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(184, 154, 90, 0.38);
+  border-radius: 14px;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0E1D61;
+  outline: none;
+  transition: all var(--transition-normal, 0.2s);
+}
+
+.geom-main-input:focus {
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.22), 0 8px 25px rgba(14, 29, 97, 0.08);
+  background: #FFFFFF;
+}
+
+.geom-input-clear {
+  position: absolute;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: rgba(14, 29, 97, 0.4);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.15s;
+}
+
+.geom-input-clear:hover {
+  color: #0E1D61;
+}
+
+/* Suggested Action Buttons */
+.geom-action-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.geom-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  color: #0E1D61;
+  transition: all 0.2s;
+}
+
+.geom-action-btn:hover {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+  box-shadow: 0 4px 14px rgba(14, 29, 97, 0.2);
+}
+
+.geom-btn-primary {
+  background: #0E1D61 !important;
+  color: #E8E0D2 !important;
+  border-color: #0E1D61 !important;
+}
+
+.geom-btn-primary:hover {
+  background: #182B7A !important;
+  box-shadow: 0 6px 20px rgba(14, 29, 97, 0.3) !important;
+}
+
+.geom-examples-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.geom-examples-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-tertiary, rgba(14, 29, 97, 0.5));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.geom-example-chip {
+  padding: 5px 12px;
+  border-radius: var(--radius-pill, 9999px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.22);
+  color: #0E1D61;
+  font-family: var(--font-math, serif);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.geom-example-chip:hover {
+  background: rgba(184, 154, 90, 0.15);
+  border-color: #B89A5A;
+}
+
+.geom-suggestions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  background: rgba(184, 154, 90, 0.08);
+  border-radius: 10px;
+  margin-top: 14px;
+}
+
+.geom-suggest-chip {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill, 9999px);
+  background: #0E1D61;
+  color: #E8E0D2;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.geom-suggest-chip:hover {
+  background: #B89A5A;
+  color: #0E1D61;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   4. INTERACTIVE CANVAS CONTAINER & TOOLBAR
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-canvas-panel {
+  padding: 20px;
+  background: rgba(250, 247, 242, 0.95);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 16px 45px rgba(14, 29, 97, 0.08);
+  margin-bottom: 28px;
+}
+
+.geom-canvas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.geom-canvas-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.geom-canvas-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.geom-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 13px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(184, 154, 90, 0.28);
+  background: rgba(255, 255, 255, 0.85);
+  color: #0E1D61;
+  transition: all 0.15s;
+}
+
+.geom-tool-btn:hover {
+  background: rgba(184, 154, 90, 0.14);
+  border-color: #B89A5A;
+}
+
+.geom-tool-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+}
+
+.geom-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  box-shadow: inset 0 2px 8px rgba(14, 29, 97, 0.04);
+}
+
+.geom-canvas-elem {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.geom-coord-banner {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  background: rgba(14, 29, 97, 0.88);
+  backdrop-filter: blur(8px);
+  color: #E8E0D2;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  pointer-events: none;
+}
+
+.geom-canvas-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: rgba(14, 29, 97, 0.65);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Measurement Info Box */
+.geom-measure-box {
+  margin-top: 14px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.geom-measure-title {
+  font-weight: 700;
+  color: #0E1D61;
+  font-size: 0.88rem;
+}
+
+.geom-measure-data {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.84rem;
+  color: #0E1D61;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   5. TWO-COLUMN LAYOUT (MODULES & TOOLS GRID)
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+
+@media (max-width: 992px) {
+  .geom-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.geom-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.geom-section-title {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0E1D61;
+  margin: 0;
+}
+
+.geom-see-all {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #B89A5A;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.geom-see-all:hover {
+  text-decoration: underline;
+}
+
+/* Module Cards */
+.geom-modules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.geom-module-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.22);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.geom-module-card:hover {
+  transform: translateX(4px);
+  border-color: #B89A5A;
+  background: rgba(246, 241, 233, 0.95);
+  box-shadow: 0 6px 22px rgba(14, 29, 97, 0.08);
+}
+
+.geom-module-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: rgba(14, 29, 97, 0.06);
+  border: 1px solid rgba(184, 154, 90, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-math, serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0E1D61;
+  flex-shrink: 0;
+}
+
+.geom-module-info {
+  flex: 1;
+}
+
+.geom-module-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #B89A5A;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.geom-module-name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0E1D61;
+  margin-bottom: 3px;
+}
+
+.geom-module-desc {
+  font-size: 0.82rem;
+  color: rgba(14, 29, 97, 0.65);
+}
+
+.geom-module-arrow {
+  color: #B89A5A;
+}
+
+/* Tools Grid */
+.geom-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.geom-tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.22);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.geom-tool-card:hover {
+  transform: translateY(-3px);
+  border-color: #B89A5A;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 24px rgba(184, 154, 90, 0.16);
+}
+
+.geom-tool-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(184, 154, 90, 0.14);
+  color: #0E1D61;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-math, serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.geom-tool-name {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.geom-tool-desc {
+  font-size: 0.74rem;
+  color: rgba(14, 29, 97, 0.6);
+  margin-top: 3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   6. QUICK GEOMETRY ACTIONS TOOLBAR
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-quick-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 2px 14px 2px;
+  margin-bottom: 24px;
+  scrollbar-width: thin;
+}
+
+.geom-quick-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 15px;
+  border-radius: var(--radius-pill, 9999px);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0E1D61;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.geom-quick-pill:hover {
+  background: rgba(184, 154, 90, 0.16);
+  border-color: #B89A5A;
+}
+
+.geom-quick-pill.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #B89A5A;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   7. STEP-BY-STEP RESULT PANEL
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-result-panel {
+  padding: 24px 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid rgba(184, 154, 90, 0.4);
+  box-shadow: 0 16px 45px rgba(14, 29, 97, 0.09);
+  margin-top: 20px;
+  animation: geomFadeIn 0.25s ease-out;
+}
+
+@keyframes geomFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.geom-result-op-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #B89A5A;
+  margin-bottom: 6px;
+}
+
+.geom-result-expr {
+  font-family: var(--font-math, serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: rgba(14, 29, 97, 0.75);
+}
+
+.geom-result-arrow {
+  color: #B89A5A;
+  font-size: 1.1rem;
+  margin: 4px 0;
+}
+
+.geom-result-answer {
+  font-family: var(--font-math, serif);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0E1D61;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.geom-result-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(184, 154, 90, 0.2);
+}
+
+.geom-steps-container {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(184, 154, 90, 0.2);
+}
+
+.geom-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.geom-step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(246, 241, 233, 0.65);
+  border: 1px solid rgba(184, 154, 90, 0.18);
+}
+
+.geom-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #0E1D61;
+  color: #E8E0D2;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.geom-step-body {
+  flex: 1;
+}
+
+.geom-step-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #B89A5A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.geom-step-value {
+  font-family: var(--font-math, serif);
+  font-size: 1.05rem;
+  color: #0E1D61;
+}
+
+.geom-error-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1.5px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.geom-error-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.geom-error-msg {
+  font-size: 0.86rem;
+  color: rgba(14, 29, 97, 0.8);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   8. DEDICATED TOOLS VIEW (TABS & FORMS)
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-tool-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+  background: rgba(14, 29, 97, 0.04);
+  border-radius: 12px;
+  padding: 5px;
+  flex-wrap: wrap;
+}
+
+.geom-tool-tab {
+  flex: 1;
+  min-width: 120px;
+  padding: 9px 16px;
+  border-radius: 9px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, rgba(14, 29, 97, 0.7));
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.geom-tool-tab.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  box-shadow: 0 4px 12px rgba(14, 29, 97, 0.25);
+}
+
+.geom-tab-content {
+  animation: geomFadeIn 0.2s ease-out;
+}
+
+.geom-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.geom-field-wrap label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0E1D61;
+  margin-bottom: 6px;
+}
+
+.geom-input-field {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(184, 154, 90, 0.35);
+  background: #FFFFFF;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.95rem;
+  color: #0E1D61;
+  outline: none;
+  transition: all 0.15s;
+}
+
+.geom-input-field:focus {
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.2);
+}
+
+.geom-compute-btn {
+  width: 100%;
+  height: 48px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Conic Comparison Table */
+.geom-table-wrap {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  background: rgba(255, 255, 255, 0.9);
+  margin-top: 20px;
+}
+
+.geom-conic-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.geom-conic-table th {
+  background: #0E1D61;
+  color: #E8E0D2;
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.geom-conic-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.15);
+  color: #0E1D61;
+}
+
+.geom-conic-table tr:hover td {
+  background: rgba(184, 154, 90, 0.08);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   9. DEDICATED TOOLS WORKSPACE CONTAINER & COMPONENTS
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-workspace-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 24px 64px 24px;
+}
+
+.geom-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(184, 154, 90, 0.15);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #B89A5A;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.geom-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #B89A5A;
+}
+
+.geom-header-title {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #0E1D61;
+  letter-spacing: -0.025em;
+  margin: 0 0 6px 0;
+  line-height: 1.15;
+}
+
+.geom-header-subtitle {
+  font-size: 1.05rem;
+  color: rgba(14, 29, 97, 0.72);
+  margin: 0;
+  font-weight: 400;
+}
+
+.geom-tool-switcher {
+  display: flex;
+  gap: 8px;
+  margin: 24px 0 32px 0;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.geom-switcher-btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.geom-switcher-btn:hover {
+  border-color: #B89A5A;
+  background: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.geom-switcher-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+  box-shadow: 0 6px 16px rgba(14, 29, 97, 0.25);
+}
+
+.geom-two-col-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .geom-two-col-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.geom-plane-tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .geom-plane-tool-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.geom-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 30px rgba(14, 29, 97, 0.05);
+}
+
+.geom-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.geom-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0E1D61;
+  margin: 0;
+}
+
+.geom-card-subhead {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #B89A5A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 12px 0 8px 0;
+}
+
+.geom-radio-toggle, .geom-sub-nav-tabs {
+  display: flex;
+  background: rgba(14, 29, 97, 0.06);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.geom-toggle-btn, .geom-sub-tab-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0E1D61;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.geom-toggle-btn.active, .geom-sub-tab-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  box-shadow: 0 2px 8px rgba(14, 29, 97, 0.2);
+}
+
+.geom-point-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.geom-pt-badge {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.geom-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.geom-input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.geom-input-group label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: rgba(14, 29, 97, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.geom-sub-params {
+  padding: 12px;
+  background: rgba(246, 241, 233, 0.6);
+  border-radius: 12px;
+  border: 1px dashed rgba(184, 154, 90, 0.35);
+  margin: 14px 0;
+}
+
+.geom-actions-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.geom-action-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.geom-action-btn.primary {
+  background: #0E1D61;
+  color: #E8E0D2;
+  box-shadow: 0 4px 14px rgba(14, 29, 97, 0.2);
+}
+
+.geom-action-btn.primary:hover {
+  background: #182B85;
+  transform: translateY(-1px);
+}
+
+.geom-action-btn.secondary {
+  background: rgba(184, 154, 90, 0.16);
+  color: #0E1D61;
+  border: 1px solid rgba(184, 154, 90, 0.4);
+}
+
+.geom-action-btn.secondary:hover {
+  background: rgba(184, 154, 90, 0.25);
+}
+
+.geom-canvas-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.28);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(14, 29, 97, 0.06);
+}
+
+.geom-canvas-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(246, 241, 233, 0.92);
+  border-bottom: 1px solid rgba(184, 154, 90, 0.25);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.geom-canvas-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #0E1D61;
+}
+
+.geom-canvas-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.geom-coord-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  background: rgba(14, 29, 97, 0.08);
+  border-radius: 6px;
+  color: #0E1D61;
+  font-weight: 600;
+}
+
+.geom-icon-btn {
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  color: #0E1D61;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.geom-icon-btn:hover {
+  border-color: #B89A5A;
+  background: rgba(184, 154, 90, 0.1);
+}
+
+.geom-icon-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+}
+
+.geom-canvas-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.geom-interactive-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.geom-canvas-hint {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  font-size: 0.74rem;
+  color: rgba(14, 29, 97, 0.55);
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.geom-slider-box {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(184, 154, 90, 0.08);
+  border-radius: 10px;
+}
+
+.geom-slider-box label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0E1D61;
+  margin-bottom: 6px;
+}
+
+.geom-slider {
+  width: 100%;
+  accent-color: #B89A5A;
+}
+
+.geom-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin-top: 10px;
+}
+
+.geom-compare-table th {
+  background: #0E1D61;
+  color: #E8E0D2;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.geom-compare-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.2);
+  color: #0E1D61;
+}
+
+.geom-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.geom-point-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: rgba(246, 241, 233, 0.7);
+  border-radius: 8px;
+}
+
+.geom-pt-coords {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  color: #0E1D61;
+}
+
+.geom-pt-del {
+  border: none;
+  background: transparent;
+  color: rgba(239, 68, 68, 0.8);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.geom-measure-metric {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.15);
+  font-size: 0.86rem;
+}
+
+.geom-metric-label {
+  color: rgba(14, 29, 97, 0.7);
+}
+
+.geom-metric-val {
+  font-weight: 700;
+  color: #0E1D61;
+  font-family: var(--font-mono, monospace);
+}
+
+.geom-metric-val.highlight {
+  color: #B89A5A;
+}
+
+.geom-badge-status {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(14, 29, 97, 0.08);
+  color: rgba(14, 29, 97, 0.6);
+  font-weight: 600;
+}
+
+.geom-badge-status.active {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.geom-empty-hint {
+  font-size: 0.84rem;
+  color: rgba(14, 29, 97, 0.55);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   10. PROMINENT UNIFIED WORKSPACE LAYOUT & CONIC ANALYZER
+   ═══════════════════════════════════════════════════════════════════ */
+.geom-unified-bar-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid rgba(184, 154, 90, 0.4);
+  border-radius: 16px;
+  padding: 6px 8px 6px 20px;
+  box-shadow: 0 10px 32px rgba(14, 29, 97, 0.08);
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+}
+
+.geom-unified-bar-box:focus-within {
+  border-color: #B89A5A;
+  box-shadow: 0 12px 36px rgba(184, 154, 90, 0.2);
+}
+
+.geom-unified-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #0E1D61;
+  outline: none;
+  padding: 8px 12px 8px 0;
+}
+
+.geom-unified-analyze-btn {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(14, 29, 97, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.geom-unified-analyze-btn:hover {
+  background: #182B85;
+  transform: translateY(-1px);
+}
+
+.geom-section-label-caps {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #B89A5A;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.geom-workspace-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .geom-workspace-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.geom-properties-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 35px rgba(14, 29, 97, 0.06);
+}
+
+.geom-prop-metric-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0 20px 0;
+}
+
+.geom-prop-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(246, 241, 233, 0.7);
+  border-radius: 12px;
+  border-left: 3px solid #B89A5A;
+}
+
+.geom-prop-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.geom-prop-val {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #B89A5A;
+}
+
+.geom-prop-subval {
+  font-size: 0.82rem;
+  color: rgba(14, 29, 97, 0.6);
+  font-weight: 400;
+  margin-left: 6px;
+  font-family: var(--font-mono, monospace);
+}
+
+.geom-btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.geom-btn-sm {
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  background: #FFFFFF;
+  color: #0E1D61;
+  transition: all 0.15s ease;
+}
+
+.geom-btn-sm:hover {
+  background: rgba(184, 154, 90, 0.12);
+  border-color: #B89A5A;
+}
+
+.geom-btn-sm.primary {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+}
+
+.geom-btn-sm.primary:hover {
+  background: #182B85;
+}
+
+/* Conic Analyzer Container */
+.geom-conic-analyzer-section {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(184, 154, 90, 0.35);
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 12px 40px rgba(14, 29, 97, 0.07);
+}
+
+.geom-conic-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .geom-conic-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.geom-conic-param-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.geom-conic-param-table tr {
+  border-bottom: 1px solid rgba(184, 154, 90, 0.18);
+}
+
+.geom-conic-param-table td {
+  padding: 8px 10px;
+  font-size: 0.92rem;
+}
+
+.geom-conic-param-table td:first-child {
+  font-weight: 700;
+  color: #0E1D61;
+  width: 45%;
+}
+
+.geom-conic-param-table td:last-child {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-weight: 700;
+  color: #B89A5A;
+  font-size: 1.15rem;
+}
+
+.geom-conic-canvas-box {
+  width: 100%;
+  height: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  position: relative;
+  background: #FAF7F2;
+}
+
+

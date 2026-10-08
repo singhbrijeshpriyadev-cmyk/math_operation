@@ -1,0 +1,364 @@
+/* ==========================================================================
+   OG - Scientific & Basic Calculator UI Architecture
+   Luxury Liquid Glass: Ivory (#E8E0D2) Keypad + Deep Atlas Navy (#0E1D61) Screen + Gold (#B89A5A)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Calculator Layout Container
+   -------------------------------------------------------------------------- */
+.calc-wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calc-frame {
+  background: rgba(240, 234, 224, 0.75);
+  backdrop-filter: blur(28px) saturate(130%);
+  -webkit-backdrop-filter: blur(28px) saturate(130%);
+  border: 1px solid rgba(184, 154, 90, 0.32);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 50px rgba(14, 29, 97, 0.12);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+/* --------------------------------------------------------------------------
+   Top Bar: Mode Switcher & Tools
+   -------------------------------------------------------------------------- */
+.calc-top-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.calc-mode-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(14, 29, 97, 0.08);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: var(--radius-pill);
+}
+
+.mode-tab-btn {
+  padding: 6px 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0E1D61;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.mode-tab-btn:hover {
+  color: #0E1D61;
+  background: rgba(184, 154, 90, 0.15);
+}
+
+.mode-tab-btn.active {
+  color: #0E1D61;
+  background: #B89A5A;
+  border: 1px solid #B89A5A;
+  box-shadow: 0 2px 10px rgba(184, 154, 90, 0.35);
+}
+
+.calc-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Precision Dropdown */
+.calc-precision-select {
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: var(--radius-pill);
+  color: #0E1D61;
+  font-family: var(--font-math);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  outline: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.calc-precision-select:focus,
+.calc-precision-select:hover {
+  border-color: #B89A5A;
+  color: #0E1D61;
+  box-shadow: 0 0 10px rgba(184, 154, 90, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Liquid Glass Display Screen: Deep Atlas Navy Glass Panel
+   -------------------------------------------------------------------------- */
+.calc-screen {
+  background: #0E1D61;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(184, 154, 90, 0.4);
+  border-radius: var(--radius-lg);
+  padding: 22px 26px;
+  box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.35), 0 10px 30px rgba(14, 29, 97, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 144px;
+  margin-bottom: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184, 154, 90, 0.6), transparent);
+}
+
+.calc-screen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.calc-angle-toggles {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calc-badge {
+  font-family: var(--font-math);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  background: rgba(232, 224, 210, 0.12);
+  color: rgba(232, 224, 210, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.calc-badge:hover {
+  color: #E8E0D2;
+  border-color: #B89A5A;
+}
+
+.calc-badge.active {
+  background: #B89A5A;
+  color: #0E1D61;
+  border-color: #B89A5A;
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.45);
+}
+
+.calc-screen-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.screen-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: rgba(232, 224, 210, 0.7);
+  background: transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.screen-action-btn:hover {
+  color: #B89A5A;
+}
+
+/* Screen Numerical Displays */
+/* Input: Ivory Text */
+.calc-expression-line {
+  font-family: var(--font-math);
+  font-size: 1.15rem;
+  color: #E8E0D2;
+  text-align: right;
+  min-height: 32px;
+  word-break: break-all;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.calc-expression-line::-webkit-scrollbar {
+  display: none;
+}
+
+/* Result: Gold Text */
+.calc-result-line {
+  font-family: var(--font-math);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  color: #B89A5A;
+  text-align: right;
+  line-height: 1.15;
+  word-break: break-all;
+  text-shadow: 0 0 20px rgba(184, 154, 90, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.calc-result-line.has-error {
+  color: #D97706;
+  font-size: 1.8rem;
+  text-shadow: 0 0 20px rgba(217, 119, 6, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Keypad Layouts: Ivory Glass Buttons, Deep Atlas Navy Operators, Gold Equals
+   -------------------------------------------------------------------------- */
+.calc-keypad-scientific {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.calc-keypad-basic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.calc-btn {
+  min-height: 52px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-math);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), 
+              background var(--transition-fast), 
+              border-color var(--transition-fast), 
+              box-shadow var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  touch-action: manipulation;
+  box-shadow: 0 2px 8px rgba(14, 29, 97, 0.04);
+}
+
+.calc-btn:hover {
+  background: #FFFFFF;
+  border-color: #B89A5A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(14, 29, 97, 0.08), 0 0 12px rgba(184, 154, 90, 0.2);
+}
+
+.calc-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: inset 0 2px 4px rgba(14, 29, 97, 0.2);
+}
+
+/* Button Variants */
+.calc-btn-num {
+  font-weight: 800;
+  color: #0E1D61;
+  background: rgba(250, 247, 242, 0.95);
+}
+
+.calc-btn-num:hover {
+  background: #FFFFFF;
+  border-color: #B89A5A;
+}
+
+.calc-btn-fn {
+  color: #0E1D61;
+  font-size: 0.92rem;
+  background: rgba(238, 232, 222, 0.75);
+}
+
+.calc-btn-fn:hover {
+  color: #0E1D61;
+  border-color: #B89A5A;
+  background: #FFFFFF;
+  box-shadow: 0 0 14px rgba(184, 154, 90, 0.25);
+}
+
+.calc-btn-op {
+  color: #0E1D61;
+  font-size: 1.25rem;
+  font-weight: 800;
+  background: rgba(184, 154, 90, 0.18);
+  border-color: rgba(184, 154, 90, 0.35);
+}
+
+.calc-btn-op:hover {
+  background: rgba(184, 154, 90, 0.35);
+  border-color: #B89A5A;
+  box-shadow: 0 0 16px rgba(184, 154, 90, 0.3);
+}
+
+.calc-btn-danger {
+  color: #991B1B;
+  background: rgba(184, 154, 90, 0.12);
+  border-color: rgba(153, 27, 27, 0.25);
+}
+
+.calc-btn-danger:hover {
+  background: rgba(153, 27, 27, 0.15);
+  border-color: #991B1B;
+}
+
+/* Primary Equals Button: Pure Gold Background, Deep Atlas Navy Text */
+.calc-btn-equals {
+  color: #0E1D61;
+  font-size: 1.35rem;
+  font-weight: 900;
+  background: #B89A5A;
+  border-color: #B89A5A;
+  box-shadow: 0 6px 20px rgba(184, 154, 90, 0.4);
+}
+
+.calc-btn-equals:hover {
+  background: #A58748;
+  border-color: #A58748;
+  box-shadow: 0 8px 26px rgba(184, 154, 90, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   Calculation History Drawer
+   -------------------------------------------------------------------------- */
+.calc-history-drawer {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: rgba(242, 236, 227, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+}
+
+.calc-history-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}

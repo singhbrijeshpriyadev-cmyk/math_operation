@@ -1,0 +1,260 @@
+/* ==========================================================================
+   OG - Floating Liquid Glass Navigation
+   Deep Atlas Navy (#0E1D61) Capsule + Ivory (#E8E0D2) Text + Gold (#B89A5A) Highlights
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Desktop Floating Top Navigation Bar
+   -------------------------------------------------------------------------- */
+.navbar-desktop-container {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+  pointer-events: none;
+}
+
+.navbar-desktop {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-content-width);
+  height: var(--nav-height-desktop);
+  padding: 0 24px;
+  background: rgba(14, 29, 97, 0.92);
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 16px 45px rgba(14, 29, 97, 0.25),
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* Brand Logo: OG */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-brand-logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #0E1D61;
+  border: 1.5px solid #B89A5A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 16px rgba(184, 154, 90, 0.35);
+}
+
+.nav-brand-logo-mark span {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #B89A5A;
+  letter-spacing: -0.04em;
+}
+
+.nav-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #E8E0D2;
+}
+
+.nav-brand-subtitle {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #B89A5A;
+  text-transform: uppercase;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  background: rgba(232, 224, 210, 0.07);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(184, 154, 90, 0.18);
+}
+
+.nav-link-item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  min-height: 40px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(232, 224, 210, 0.82);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.nav-link-item a:hover {
+  color: #E8E0D2;
+  background: rgba(184, 154, 90, 0.16);
+}
+
+/* Active Navigation Item: Gold indicator, subtle Gold glow, Ivory text, slight elevation */
+.nav-link-item a.active {
+  color: #E8E0D2;
+  background: rgba(184, 154, 90, 0.28);
+  border: 1px solid #B89A5A;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 15px rgba(184, 154, 90, 0.35);
+  transform: translateY(-1px);
+}
+
+.nav-link-item a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: #B89A5A;
+  box-shadow: 0 0 8px #B89A5A;
+}
+
+/* Nav Actions (Status indicator) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(184, 154, 90, 0.15);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #B89A5A;
+  letter-spacing: 0.03em;
+}
+
+.nav-status-indicator .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #B89A5A;
+  box-shadow: 0 0 8px #B89A5A;
+  animation: pulseDot 2s infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Floating Bottom Navigation Bar (Deep Atlas Navy Capsule)
+   -------------------------------------------------------------------------- */
+.navbar-mobile-bottom {
+  display: none; /* Shown on mobile breakpoint */
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  height: var(--nav-height-mobile);
+  background: rgba(14, 29, 97, 0.94);
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  border: 1px solid rgba(184, 154, 90, 0.38);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 16px 45px rgba(14, 29, 97, 0.35),
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  z-index: 100;
+  padding: 6px 8px;
+  justify-content: space-around;
+  align-items: center;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navbar-mobile-bottom::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  min-height: 48px;
+  padding: 4px 8px;
+  border-radius: 18px;
+  color: rgba(232, 224, 210, 0.75);
+  font-size: 0.7rem;
+  font-weight: 600;
+  gap: 3px;
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-link svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform var(--transition-fast);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: #E8E0D2;
+}
+
+.mobile-nav-link.active {
+  background: rgba(184, 154, 90, 0.22);
+  color: #B89A5A;
+}
+
+.mobile-nav-link.active svg {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(184, 154, 90, 0.6));
+}
+
+/* Mobile Top Header (compact) */
+.mobile-top-header {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  right: 16px;
+  height: 52px;
+  background: rgba(14, 29, 97, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: var(--radius-pill);
+  z-index: 99;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+}

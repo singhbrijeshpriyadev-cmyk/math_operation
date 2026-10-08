@@ -1,0 +1,1291 @@
+/**
+ * OG — Algebra Workspace CSS
+ * Ivory + Gold + Deep Atlas Navy Liquid Glass Design System
+ * All classes prefixed with `alg-` to avoid collisions
+ */
+
+/* ═══════════════════════════════════════════════════════════════════
+   1. WORKSPACE SHELL
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-workspace {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   2. HEADER
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.alg-header-text { flex: 1; }
+
+.alg-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(184, 154, 90, 0.12);
+  border: 1px solid rgba(184, 154, 90, 0.4);
+  color: #B89A5A;
+}
+
+.alg-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #0E1D61;
+  margin: 0 0 8px 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.alg-subtitle {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.alg-header-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   3. QUICK SOLVER PANEL
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-solver-panel {
+  margin-bottom: 40px;
+  padding: 28px 32px;
+}
+
+.alg-solver-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.alg-solver-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.alg-solver-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 29, 97, 0.08);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: 12px;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.1rem;
+  color: #0E1D61;
+  font-weight: 700;
+}
+
+.alg-mode-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 99px;
+  background: rgba(14, 29, 97, 0.06);
+  border: 1px solid rgba(14, 29, 97, 0.15);
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   4. INPUT
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-input-row {
+  margin-bottom: 16px;
+}
+
+.alg-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.alg-input-symbol {
+  position: absolute;
+  left: 16px;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #B89A5A;
+  pointer-events: none;
+  z-index: 2;
+  user-select: none;
+}
+
+.alg-main-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 48px 14px 56px;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #0E1D61;
+  background: rgba(246, 241, 233, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(184, 154, 90, 0.3);
+  border-radius: var(--radius-pill, 9999px);
+  outline: none;
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  will-change: border-color, box-shadow;
+}
+
+.alg-main-input::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.alg-main-input:focus {
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.15),
+              0 4px 20px rgba(14, 29, 97, 0.08);
+}
+
+.alg-input-clear {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+.alg-input-clear:hover { color: #0E1D61; background: rgba(14,29,97,0.06); }
+
+/* ═══════════════════════════════════════════════════════════════════
+   5. ACTION BUTTONS
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-action-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.alg-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: 99px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid rgba(184, 154, 90, 0.35);
+  background: rgba(246, 241, 233, 0.8);
+  color: #0E1D61;
+  transition: all var(--transition-normal);
+  will-change: transform, background, box-shadow;
+}
+
+.alg-action-btn:hover {
+  border-color: #B89A5A;
+  background: rgba(184, 154, 90, 0.12);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(184, 154, 90, 0.2);
+}
+
+.alg-btn-primary {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+}
+
+.alg-btn-primary:hover {
+  background: #162370;
+  border-color: #162370;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(14, 29, 97, 0.35);
+}
+
+.alg-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  font-size: 0.82rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   6. EXAMPLES + SUGGESTIONS
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-examples-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.alg-examples-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.alg-example-chip {
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(184, 154, 90, 0.08);
+  border: 1px solid rgba(184, 154, 90, 0.28);
+  color: #0E1D61;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.alg-example-chip:hover {
+  background: rgba(184, 154, 90, 0.18);
+  border-color: #B89A5A;
+  transform: translateY(-1px);
+}
+
+.alg-suggestions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-top: 1px solid rgba(184, 154, 90, 0.15);
+  margin-top: 4px;
+}
+
+.alg-suggest-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.alg-suggest-chip {
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: rgba(14, 29, 97, 0.06);
+  border: 1px solid rgba(14, 29, 97, 0.2);
+  color: #0E1D61;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.alg-suggest-chip:hover {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   7. RESULT PANEL
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-result-area {
+  margin-top: 20px;
+  border-top: 1px solid rgba(184, 154, 90, 0.2);
+  padding-top: 20px;
+}
+
+.alg-result-panel {
+  background: rgba(246, 241, 233, 0.6);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: 20px;
+  padding: 24px 28px;
+}
+
+.alg-result-op-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #B89A5A;
+  margin-bottom: 10px;
+}
+
+.alg-result-expr {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.alg-result-arrow {
+  font-size: 1.4rem;
+  color: rgba(184, 154, 90, 0.5);
+  margin: 6px 0;
+  line-height: 1;
+}
+
+.alg-result-answer {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #0E1D61;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.alg-result-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.alg-meta-item {
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.alg-meta-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.alg-meta-val {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.alg-disc-class {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  background: rgba(14, 29, 97, 0.05);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.alg-result-interval {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.alg-interval-val {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0E1D61;
+}
+
+.alg-result-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   8. STEP-BY-STEP
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-steps-container {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(184, 154, 90, 0.2);
+}
+
+.alg-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alg-step-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(246, 241, 233, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.15);
+  border-radius: 12px;
+  animation: cardReveal 0.3s ease-out both;
+}
+
+.alg-step-num {
+  min-width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.alg-step-body { flex: 1; }
+
+.alg-step-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.alg-step-value {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0E1D61;
+  word-break: break-word;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   9. ERROR PANEL
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-error-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+
+.alg-error-icon {
+  font-size: 1.3rem;
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.alg-error-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin-bottom: 4px;
+}
+
+.alg-error-msg {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   10. TWO-COLUMN LAYOUT
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.alg-right-col { display: flex; flex-direction: column; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   11. SECTION HEADERS
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.alg-section-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0E1D61;
+  margin: 0;
+  position: relative;
+}
+
+.alg-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #B89A5A;
+  border-radius: 2px;
+}
+
+.alg-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #B89A5A;
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 99px;
+  transition: background var(--transition-fast);
+}
+
+.alg-see-all:hover { background: rgba(184, 154, 90, 0.1); }
+.alg-see-all svg { width: 12px; height: 12px; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   12. MODULE LIST
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-modules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alg-module-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(246, 241, 233, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  will-change: transform, border-color, box-shadow;
+}
+
+.alg-module-card:hover {
+  transform: translateX(4px);
+  border-color: #B89A5A;
+  box-shadow: 0 4px 20px rgba(184, 154, 90, 0.15);
+  background: rgba(246, 241, 233, 0.95);
+}
+
+.alg-module-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 29, 97, 0.06);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: 10px;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0E1D61;
+  flex-shrink: 0;
+}
+
+.alg-module-info { flex: 1; min-width: 0; }
+
+.alg-module-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #B89A5A;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.alg-module-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0E1D61;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alg-module-desc {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alg-module-arrow {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.alg-module-card:hover .alg-module-arrow { color: #B89A5A; transform: translateX(3px); }
+.alg-module-arrow svg { width: 14px; height: 14px; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   13. TOOLS GRID
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.alg-tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px;
+  background: rgba(246, 241, 233, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  will-change: transform, border-color, background;
+}
+
+.alg-tool-card:hover {
+  border-color: #B89A5A;
+  background: rgba(184, 154, 90, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(184, 154, 90, 0.2);
+}
+
+.alg-tool-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 29, 97, 0.07);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  border-radius: 8px;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.alg-tool-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0E1D61;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   14. RECENT PANEL
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-recent-panel {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.alg-recent-item {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.12);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.alg-recent-item:last-child { border-bottom: none; }
+.alg-recent-item:hover { background: rgba(184, 154, 90, 0.08); }
+
+.alg-recent-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.alg-recent-module {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #B89A5A;
+  letter-spacing: 0.06em;
+}
+
+.alg-recent-time {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.alg-recent-expr {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.alg-recent-result {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0E1D61;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   15. EMPTY STATE
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-empty-state {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.alg-empty-icon {
+  font-size: 2.5rem;
+  color: rgba(184, 154, 90, 0.4);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.alg-empty-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.alg-empty-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   16. SEARCH
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-search-wrap { padding: 16px !important; }
+
+.alg-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(246, 241, 233, 0.9);
+  border: 1.5px solid rgba(184, 154, 90, 0.25);
+  border-radius: var(--radius-pill, 99px);
+  padding: 10px 18px;
+  transition: border-color var(--transition-smooth);
+}
+
+.alg-search-input-wrap:focus-within { border-color: #B89A5A; }
+.alg-search-input-wrap svg { color: var(--text-muted); flex-shrink: 0; }
+
+.alg-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  color: #0E1D61;
+  font-family: var(--font-sans);
+}
+
+.alg-search-input::placeholder { color: var(--text-muted); }
+
+.alg-search-results {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alg-search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(246, 241, 233, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.15);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.alg-search-result-item:hover {
+  border-color: #B89A5A;
+  background: rgba(184, 154, 90, 0.1);
+  transform: translateX(3px);
+}
+
+.alg-search-type {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #B89A5A;
+  background: rgba(184, 154, 90, 0.12);
+  border-radius: 4px;
+  padding: 2px 7px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.alg-search-result-item > div { flex: 1; min-width: 0; }
+
+.alg-search-result-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.alg-search-result-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.alg-search-result-item svg { width: 13px; height: 13px; color: var(--text-muted); }
+.alg-search-empty { font-size: 0.85rem; color: var(--text-muted); padding: 8px 4px; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   17. TOOLS WORKSPACE — form elements
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-tool-nav-pills {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 14px 2px;
+  margin-bottom: 20px;
+  scrollbar-width: thin;
+}
+
+.alg-tool-nav-pills::-webkit-scrollbar {
+  height: 4px;
+}
+
+.alg-tool-nav-pills::-webkit-scrollbar-thumb {
+  background: rgba(184, 154, 90, 0.4);
+  border-radius: 4px;
+}
+
+.alg-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 15px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-normal);
+}
+
+.alg-pill:hover {
+  background: rgba(184, 154, 90, 0.12);
+  border-color: #B89A5A;
+  color: #0E1D61;
+}
+
+.alg-pill.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #B89A5A;
+  box-shadow: 0 4px 14px rgba(14, 29, 97, 0.22);
+}
+
+.alg-tool-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+  background: rgba(14, 29, 97, 0.04);
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.alg-tool-tab {
+  flex: 1;
+  padding: 9px 18px;
+  border-radius: 9px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+}
+
+.alg-tool-tab.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  box-shadow: 0 4px 12px rgba(14, 29, 97, 0.25);
+}
+
+.alg-tab-content { animation: viewFadeIn 0.25s ease-out; }
+
+.alg-tool-form { margin-bottom: 20px; }
+
+.alg-form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.alg-form-presets {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.alg-compute-btn {
+  margin-top: 4px;
+}
+
+/* Quadratic coefficient inputs */
+.alg-quad-coeffs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.alg-coeff-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.alg-coeff-input > label {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0E1D61;
+  text-align: center;
+}
+
+.alg-coeff-field {
+  text-align: center;
+  padding: 12px;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: rgba(246, 241, 233, 0.9);
+  border: 1.5px solid rgba(184, 154, 90, 0.3);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  width: 100%;
+}
+
+.alg-coeff-field:focus {
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   18. DISCRIMINANT VISUAL
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-disc-visual {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(246, 241, 233, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(184, 154, 90, 0.2);
+}
+
+.alg-disc-item {
+  text-align: center;
+}
+
+.alg-disc-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.alg-disc-val {
+  display: block;
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0E1D61;
+}
+
+.alg-disc-highlight .alg-disc-label { color: #B89A5A; }
+.alg-disc-highlight .alg-disc-val { font-size: 1.6rem; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   19. TOOL RESULT AREAS
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-tool-result-area {
+  margin-top: 16px;
+}
+
+.alg-roots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.alg-root-item {
+  text-align: center;
+  padding: 14px;
+  background: rgba(14, 29, 97, 0.05);
+  border: 1px solid rgba(14, 29, 97, 0.15);
+  border-radius: 14px;
+}
+
+.alg-root-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #B89A5A;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.alg-root-val {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0E1D61;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   20. METHOD GUIDE (Factorization)
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-method-guide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.alg-method-card {
+  padding: 14px;
+  background: rgba(246, 241, 233, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.alg-method-icon {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #B89A5A;
+  margin-bottom: 6px;
+}
+
+.alg-method-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0E1D61;
+  margin-bottom: 4px;
+}
+
+.alg-method-ex {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   21. IDENTITY REFERENCE (Expansion)
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-identity-ref {
+  background: rgba(14, 29, 97, 0.04);
+  border: 1px solid rgba(14, 29, 97, 0.1);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+.alg-identity-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.alg-identities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.alg-identity-item {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(246, 241, 233, 0.7);
+  border-radius: 10px;
+}
+
+.alg-identity-item span {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0E1D61;
+}
+
+.alg-identity-item span:nth-child(2) {
+  color: #B89A5A;
+  font-weight: 700;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   22. POLYNOMIAL STATS
+   ═══════════════════════════════════════════════════════════════════ */
+.alg-poly-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.alg-poly-stat {
+  text-align: center;
+  padding: 12px;
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  border-radius: 12px;
+}
+
+.alg-poly-stat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.alg-poly-stat-val {
+  font-family: var(--font-math, 'Crimson Pro', serif);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0E1D61;
+}
+
+.alg-poly-vertex {
+  padding: 14px;
+  background: rgba(14, 29, 97, 0.05);
+  border-radius: 12px;
+  margin: 12px 0;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   23. RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .alg-grid-2col {
+    grid-template-columns: 1fr;
+  }
+  .alg-tools-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .alg-result-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .alg-disc-visual {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .alg-poly-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .alg-workspace { padding: 24px 16px 60px; }
+  .alg-header { flex-direction: column; }
+  .alg-solver-panel { padding: 20px; }
+  .alg-action-bar { gap: 8px; }
+  .alg-action-btn { padding: 8px 14px; font-size: 0.82rem; }
+  .alg-tools-grid { grid-template-columns: repeat(3, 1fr); }
+  .alg-method-guide { grid-template-columns: 1fr; }
+  .alg-identities-grid { grid-template-columns: 1fr; }
+  .alg-quad-coeffs { grid-template-columns: repeat(3, 1fr); }
+  .alg-roots-grid { grid-template-columns: 1fr; }
+  .alg-result-answer { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .alg-tools-grid { grid-template-columns: repeat(2, 1fr); }
+  .alg-disc-visual { grid-template-columns: repeat(2, 1fr); }
+  .alg-action-bar { flex-direction: column; }
+  .alg-action-btn { width: 100%; justify-content: center; }
+  .alg-poly-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   24. REDUCED MOTION
+   ═══════════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .alg-module-card,
+  .alg-tool-card,
+  .alg-action-btn,
+  .alg-example-chip,
+  .alg-result-panel {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

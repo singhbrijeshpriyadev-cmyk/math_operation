@@ -1,0 +1,195 @@
+/* ==========================================================================
+   OG - Module 16 & 17: Matrices & Determinants Styling
+   Light Liquid Glass: Ivory (#E8E0D2) + Gold (#B89A5A) + Deep Atlas Navy (#0E1D61)
+   ========================================================================== */
+
+.matrix-module-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.matrix-hero-card {
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(242, 236, 227, 0.78);
+}
+
+.matrix-hero-card::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(184, 154, 90, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Matrix Bracket & Visual Grid
+   -------------------------------------------------------------------------- */
+.matrix-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.matrix-header-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.matrix-title-label {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0E1D61;
+  letter-spacing: 0.02em;
+}
+
+.matrix-dim-pill {
+  font-family: var(--font-math);
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(184, 154, 90, 0.18);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #0E1D61;
+  font-weight: 700;
+}
+
+.matrix-visual-wrapper {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 6px 14px;
+}
+
+/* Standard Curved Square Brackets [ ] - Gold Refined Edge */
+.matrix-bracket {
+  width: 14px;
+  align-self: stretch;
+  position: relative;
+  border-color: #B89A5A;
+}
+
+.matrix-bracket.bracket-left {
+  border-left: 2.5px solid #B89A5A;
+  border-top: 2.5px solid #B89A5A;
+  border-bottom: 2.5px solid #B89A5A;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin-right: 8px;
+}
+
+.matrix-bracket.bracket-right {
+  border-right: 2.5px solid #B89A5A;
+  border-top: 2.5px solid #B89A5A;
+  border-bottom: 2.5px solid #B89A5A;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-left: 8px;
+}
+
+/* Determinant Straight Bars | | - Deep Atlas Navy with Gold border */
+.det-bar {
+  width: 3.5px;
+  align-self: stretch;
+  background: #0E1D61;
+  box-shadow: 0 0 8px rgba(184, 154, 90, 0.3);
+}
+
+.det-bar.bracket-left {
+  margin-right: 8px;
+}
+
+.det-bar.bracket-right {
+  margin-left: 8px;
+}
+
+/* Cells Grid */
+.matrix-cells-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.matrix-grid-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.matrix-cell-input {
+  width: 58px;
+  height: 48px;
+  text-align: center;
+  font-family: var(--font-math);
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(184, 154, 90, 0.3);
+  color: #0E1D61;
+  transition: all var(--transition-fast);
+}
+
+.matrix-cell-input:focus {
+  outline: none;
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.22);
+}
+
+.matrix-cell-display {
+  min-width: 58px;
+  height: 48px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-math);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0E1D61;
+  border-radius: var(--radius-sm);
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+}
+
+/* Dimension Selectors */
+.matrix-dim-selector-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.matrix-dim-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-math);
+  font-size: 0.84rem;
+  font-weight: 700;
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.matrix-dim-btn:hover {
+  background: #FFFFFF;
+  border-color: #B89A5A;
+  color: #0E1D61;
+}
+
+.matrix-dim-btn.active {
+  background: #B89A5A;
+  color: #0E1D61;
+  border-color: #B89A5A;
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.35);
+}

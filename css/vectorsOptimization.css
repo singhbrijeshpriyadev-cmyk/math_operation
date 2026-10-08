@@ -1,0 +1,526 @@
+/**
+ * OG - Vectors & Optimization Laboratory Stylesheet
+ * Strict OG Palette:
+ * - IVORY: #E8E0D2 (50% Main Surfaces, Glass Backdrops, Subtle Panels)
+ * - GOLD: #B89A5A (30% Accents, Active Tabs, Highlights, Mathematical Glyphs)
+ * - DEEP ATLAS NAVY: #0E1D61 (20% Headings, Primary Badges, Deep Contrast Display)
+ *
+ * Premium Liquid Glass Architecture
+ */
+
+/* ==========================================================================
+   WORKSPACE & CONTAINER
+   ========================================================================== */
+.vo-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 20px 48px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+.vo-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: var(--radius-lg, 16px);
+  background: rgba(232, 224, 210, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  box-shadow: 0 10px 30px rgba(14, 29, 97, 0.05);
+}
+
+.vo-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0E1D61;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.vo-breadcrumb-link {
+  color: #B89A5A;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.vo-breadcrumb-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.vo-breadcrumb-sep {
+  opacity: 0.5;
+}
+
+.vo-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0E1D61;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.vo-subtitle {
+  font-size: 0.95rem;
+  color: #0E1D61;
+  opacity: 0.85;
+  margin: 0;
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+.vo-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   LIQUID GLASS CARDS & PANELS
+   ========================================================================== */
+.vo-glass-card {
+  background: rgba(232, 224, 210, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: var(--radius-md, 14px);
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(14, 29, 97, 0.04);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.vo-glass-card:hover {
+  border-color: rgba(184, 154, 90, 0.45);
+  box-shadow: 0 12px 32px rgba(14, 29, 97, 0.07);
+}
+
+.vo-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.vo-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.vo-card-subtitle {
+  font-size: 0.82rem;
+  color: #0E1D61;
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   BUTTONS & TOGGLES
+   ========================================================================== */
+.vo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  border: none;
+}
+
+.vo-btn-primary {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border: 1px solid #0E1D61;
+  box-shadow: 0 4px 12px rgba(14, 29, 97, 0.2);
+}
+
+.vo-btn-primary:hover {
+  background: #142882;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(14, 29, 97, 0.28);
+}
+
+.vo-btn-secondary {
+  background: rgba(232, 224, 210, 0.7);
+  color: #0E1D61;
+  border: 1px solid rgba(184, 154, 90, 0.4);
+}
+
+.vo-btn-secondary:hover {
+  background: rgba(184, 154, 90, 0.2);
+  border-color: #B89A5A;
+  color: #0E1D61;
+}
+
+.vo-btn-gold {
+  background: #B89A5A;
+  color: #0E1D61;
+  font-weight: 700;
+  border: 1px solid #B89A5A;
+}
+
+.vo-btn-gold:hover {
+  background: #c9ab6b;
+  transform: translateY(-1px);
+}
+
+.vo-mode-toggle {
+  display: flex;
+  align-items: center;
+  background: rgba(232, 224, 210, 0.6);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 4px;
+}
+
+.vo-mode-btn {
+  min-height: 38px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #0E1D61;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vo-mode-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  box-shadow: 0 2px 8px rgba(14, 29, 97, 0.18);
+}
+
+/* ==========================================================================
+   UNIVERSAL INPUT BAR
+   ========================================================================== */
+.vo-universal-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(232, 224, 210, 0.7);
+  border: 1.5px solid rgba(184, 154, 90, 0.4);
+  border-radius: 12px;
+  padding: 8px 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vo-universal-box:focus-within {
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.2);
+}
+
+.vo-universal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: #0E1D61;
+  min-height: 38px;
+}
+
+.vo-universal-input::placeholder {
+  color: #0E1D61;
+  opacity: 0.45;
+}
+
+.vo-suggestion-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.vo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(184, 154, 90, 0.15);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #0E1D61;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vo-chip:hover {
+  background: #B89A5A;
+  color: #0E1D61;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   VECTOR CARD & COMPONENT INPUTS
+   ========================================================================== */
+.vo-vector-bracket {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 224, 210, 0.55);
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(184, 154, 90, 0.3);
+}
+
+.vo-bracket-symbol {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #B89A5A;
+  user-select: none;
+}
+
+.vo-component-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.vo-component-label {
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: #B89A5A;
+  text-transform: uppercase;
+}
+
+.vo-component-input {
+  width: 72px;
+  min-height: 44px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0E1D61;
+  background: rgba(232, 224, 210, 0.85);
+  border: 1.5px solid rgba(184, 154, 90, 0.35);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vo-component-input:focus {
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.2);
+  background: #fff;
+}
+
+/* ==========================================================================
+   OPERATIONS TOOLBAR
+   ========================================================================== */
+.vo-ops-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vo-op-btn {
+  min-height: 42px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: rgba(232, 224, 210, 0.65);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #0E1D61;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vo-op-btn:hover {
+  border-color: #B89A5A;
+  background: rgba(184, 154, 90, 0.2);
+}
+
+.vo-op-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+  box-shadow: 0 4px 10px rgba(14, 29, 97, 0.15);
+}
+
+/* ==========================================================================
+   STEP-BY-STEP DERIVATION
+   ========================================================================== */
+.vo-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.vo-step-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(232, 224, 210, 0.35);
+  border-radius: 10px;
+  border: 1px solid rgba(184, 154, 90, 0.25);
+}
+
+.vo-step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #0E1D61;
+  color: #E8E0D2;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.vo-step-content {
+  flex: 1;
+}
+
+.vo-step-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0E1D61;
+  margin-bottom: 4px;
+}
+
+.vo-step-detail {
+  font-size: 0.85rem;
+  color: #0E1D61;
+  opacity: 0.9;
+  line-height: 1.45;
+}
+
+.vo-step-latex {
+  margin-top: 6px;
+  padding: 6px 12px;
+  background: rgba(232, 224, 210, 0.6);
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: #0E1D61;
+  border-left: 3px solid #B89A5A;
+}
+
+/* ==========================================================================
+   RESULT CARD
+   ========================================================================== */
+.vo-result-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(232, 224, 210, 0.45);
+  border-radius: 12px;
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  margin-bottom: 20px;
+}
+
+.vo-result-val {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0E1D61;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.vo-result-exact {
+  font-size: 1rem;
+  color: #B89A5A;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.vo-verification-box {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(184, 154, 90, 0.15);
+  border: 1px solid rgba(184, 154, 90, 0.4);
+  font-size: 0.85rem;
+  color: #0E1D61;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   GRID LAYOUTS
+   ========================================================================== */
+.vo-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.vo-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ==========================================================================
+   RESPONSIVE BEHAVIOR
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .vo-grid-2,
+  .vo-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .vo-header-row {
+    padding: 16px;
+  }
+  .vo-title {
+    font-size: 1.6rem;
+  }
+  .vo-vector-bracket {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .vo-component-input {
+    width: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vo-workspace,
+  .vo-btn,
+  .vo-glass-card,
+  .vo-chip {
+    animation: none !important;
+    transition: none !important;
+  }
+}

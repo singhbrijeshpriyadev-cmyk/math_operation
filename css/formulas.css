@@ -1,0 +1,335 @@
+/**
+ * OG - Formula Library Stylesheet
+ * Light Liquid Glass: Ivory (#E8E0D2) + Gold (#B89A5A) + Deep Atlas Navy (#0E1D61)
+ */
+
+.formula-library-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.formula-search-bar-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+
+.formula-search-input {
+  width: 100%;
+  padding: 14px 44px 14px 46px;
+  font-size: 1rem;
+  color: #0E1D61;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  border-radius: var(--radius-full);
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.formula-search-input:focus {
+  border-color: #B89A5A;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.2);
+}
+
+.formula-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(14, 29, 97, 0.45);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.formula-search-clear-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(14, 29, 97, 0.45);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  transition: color 0.15s ease;
+}
+
+.formula-search-clear-btn:hover {
+  color: #0E1D61;
+}
+
+/* Category Filter Chips */
+.formula-categories-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 28px;
+  padding-bottom: 8px;
+}
+
+.formula-category-chip {
+  padding: 8px 16px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: rgba(244, 239, 230, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.formula-category-chip:hover {
+  background: rgba(246, 241, 233, 0.95);
+  border-color: #B89A5A;
+  color: #0E1D61;
+  transform: translateY(-1px);
+}
+
+.formula-category-chip.active {
+  background: #B89A5A;
+  border-color: #B89A5A;
+  color: #0E1D61;
+  box-shadow: 0 4px 16px rgba(184, 154, 90, 0.35);
+}
+
+.formula-category-chip.chip-fav.active {
+  background: #B89A5A;
+  border-color: #B89A5A;
+  color: #0E1D61;
+  box-shadow: 0 4px 16px rgba(184, 154, 90, 0.35);
+}
+
+.chip-counter {
+  font-size: 0.72rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(14, 29, 97, 0.1);
+  color: inherit;
+  font-family: var(--font-math);
+}
+
+/* Formula Grid */
+.formulas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .formulas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Formula Card */
+.formula-item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(240, 234, 224, 0.72);
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(14, 29, 97, 0.07);
+}
+
+.formula-item-card:hover {
+  border-color: #B89A5A;
+  background: rgba(246, 241, 233, 0.90);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 44px rgba(14, 29, 97, 0.12), 0 0 20px rgba(184, 154, 90, 0.25);
+}
+
+.formula-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.formula-card-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.formula-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-fav-formula {
+  background: none;
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: rgba(14, 29, 97, 0.5);
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.btn-fav-formula:hover {
+  border-color: #B89A5A;
+  color: #B89A5A;
+  background: rgba(184, 154, 90, 0.15);
+}
+
+.btn-fav-formula.active {
+  color: #B89A5A;
+  border-color: #B89A5A;
+  background: rgba(184, 154, 90, 0.2);
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.3);
+}
+
+.formula-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0E1D61;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.01em;
+}
+
+/* Mathematical Display Box: Deep Atlas Navy Contrast Surface */
+.formula-math-box {
+  background: #0E1D61;
+  border: 1.5px solid rgba(184, 154, 90, 0.4);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  margin-bottom: 12px;
+  font-family: var(--font-math);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #E8E0D2;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  text-shadow: 0 0 12px rgba(184, 154, 90, 0.35);
+  word-break: break-word;
+  user-select: all;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(14, 29, 97, 0.15);
+}
+
+.formula-description {
+  font-size: 0.88rem;
+  color: rgba(14, 29, 97, 0.75);
+  line-height: 1.55;
+  margin: 0 0 14px 0;
+}
+
+/* Explanation Expandable Drawer */
+.formula-explanation-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 14px;
+  transition: color 0.15s ease;
+}
+
+.formula-explanation-toggle:hover {
+  color: #B89A5A;
+}
+
+.formula-explanation-drawer {
+  background: rgba(246, 241, 233, 0.9);
+  border-left: 3px solid #B89A5A;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  font-size: 0.84rem;
+  color: rgba(14, 29, 97, 0.8);
+  line-height: 1.5;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Card Footer with Link to Module */
+.formula-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(184, 154, 90, 0.18);
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+.formula-module-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0E1D61;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  transition: all 0.2s ease;
+}
+
+.formula-module-link:hover {
+  color: #0E1D61;
+  border-color: #B89A5A;
+  background: rgba(184, 154, 90, 0.15);
+}
+
+.formula-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: #B89A5A;
+  border: 1px solid #B89A5A;
+  color: #0E1D61;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(184, 154, 90, 0.3);
+}
+
+.formula-copy-btn:hover {
+  background: #A58748;
+  border-color: #A58748;
+}
+
+/* Empty State */
+.formulas-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(242, 236, 227, 0.6);
+  border-radius: var(--radius-xl);
+  border: 1.5px dashed rgba(184, 154, 90, 0.35);
+  margin-top: 20px;
+}

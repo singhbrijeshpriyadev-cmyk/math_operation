@@ -1,0 +1,362 @@
+/* ==========================================================================
+   OG - Module 03: Trigonometric Functions Styling
+   Light Liquid Glass: Ivory (#E8E0D2) + Gold (#B89A5A) + Deep Atlas Navy (#0E1D61)
+   ========================================================================== */
+
+.trig-module-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero & Header
+   -------------------------------------------------------------------------- */
+.trig-hero-card {
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(242, 236, 227, 0.78);
+}
+
+.trig-hero-card::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(184, 154, 90, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Tool Navigation Tabs
+   -------------------------------------------------------------------------- */
+.trig-tool-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 4px 12px 4px;
+  scrollbar-width: none;
+}
+
+.trig-tool-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.trig-tool-tab {
+  white-space: nowrap;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: rgba(244, 239, 230, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trig-tool-tab:hover {
+  background: rgba(246, 241, 233, 0.95);
+  color: #0E1D61;
+  border-color: #B89A5A;
+  transform: translateY(-2px);
+}
+
+.trig-tool-tab.active {
+  background: #B89A5A;
+  color: #0E1D61;
+  border-color: #B89A5A;
+  box-shadow: 0 4px 18px rgba(184, 154, 90, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Evaluator & Function Keypads
+   -------------------------------------------------------------------------- */
+.trig-evaluator-card {
+  padding: 28px;
+  border-radius: var(--radius-xl);
+  background: rgba(240, 234, 224, 0.75);
+}
+
+.trig-mode-toggle-group {
+  display: inline-flex;
+  padding: 4px;
+  background: rgba(14, 29, 97, 0.08);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: var(--radius-pill);
+  gap: 4px;
+}
+
+.trig-mode-btn {
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.trig-mode-btn.active {
+  background: #B89A5A;
+  color: #0E1D61;
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.35);
+}
+
+.trig-function-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.trig-func-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-math);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.trig-func-pill:hover {
+  background: #FFFFFF;
+  color: #0E1D61;
+  border-color: #B89A5A;
+  transform: translateY(-2px);
+}
+
+.trig-func-pill.active {
+  background: #B89A5A;
+  color: #0E1D61;
+  border-color: #B89A5A;
+  box-shadow: 0 0 14px rgba(184, 154, 90, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Workspace Split: 2D Graph Visualizer & Result Panel
+   -------------------------------------------------------------------------- */
+.trig-workspace-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 24px;
+}
+
+@media (max-width: 1080px) {
+  .trig-workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2D Canvas Graph Visualizer
+   -------------------------------------------------------------------------- */
+.trig-graph-card {
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(240, 234, 224, 0.75);
+}
+
+.trig-graph-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.trig-graph-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trig-graph-select-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-math);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.trig-graph-select-btn:hover {
+  background: #FFFFFF;
+  color: #0E1D61;
+  border-color: #B89A5A;
+}
+
+.trig-graph-select-btn.active {
+  background: #B89A5A;
+  border-color: #B89A5A;
+  color: #0E1D61;
+  box-shadow: 0 0 12px rgba(184, 154, 90, 0.35);
+}
+
+.trig-canvas-container {
+  width: 100%;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #E8E0D2;
+  border: 1.5px solid rgba(184, 154, 90, 0.35);
+  box-shadow: inset 0 0 20px rgba(14, 29, 97, 0.05);
+}
+
+.trig-canvas {
+  display: block;
+  width: 100%;
+  cursor: crosshair;
+}
+
+.trig-graph-footer-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: rgba(14, 29, 97, 0.65);
+  padding-top: 8px;
+  border-top: 1px solid rgba(184, 154, 90, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   Result & Derivation Card
+   -------------------------------------------------------------------------- */
+.trig-result-card {
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(240, 234, 224, 0.75);
+}
+
+.trig-main-result-box {
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: #0E1D61;
+  border: 1.5px solid rgba(184, 154, 90, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(14, 29, 97, 0.18);
+}
+
+.trig-result-value {
+  font-family: var(--font-math);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #E8E0D2;
+  text-shadow: 0 0 16px rgba(184, 154, 90, 0.3);
+}
+
+.trig-exact-badge {
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-math);
+  font-size: 0.95rem;
+  font-weight: 800;
+  background: rgba(184, 154, 90, 0.22);
+  border: 1px solid #B89A5A;
+  color: #B89A5A;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Standard Angle Table Styling
+   -------------------------------------------------------------------------- */
+.trig-table-container {
+  overflow-x: auto;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  background: rgba(240, 234, 224, 0.75);
+  backdrop-filter: blur(20px);
+}
+
+.trig-standard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-math);
+  font-size: 0.95rem;
+}
+
+.trig-standard-table th {
+  padding: 14px 18px;
+  text-align: center;
+  font-weight: 800;
+  color: #0E1D61;
+  background: rgba(184, 154, 90, 0.18);
+  border-bottom: 1.5px solid rgba(184, 154, 90, 0.3);
+  white-space: nowrap;
+}
+
+.trig-standard-table td {
+  padding: 12px 18px;
+  text-align: center;
+  color: #0E1D61;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.15);
+  white-space: nowrap;
+  transition: background var(--transition-fast);
+}
+
+.trig-standard-table tr:hover td {
+  background: rgba(184, 154, 90, 0.15);
+}
+
+.trig-table-angle-cell {
+  font-weight: 800;
+  color: #0E1D61;
+  background: rgba(184, 154, 90, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   Identities & Equations Cards
+   -------------------------------------------------------------------------- */
+.trig-identity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+.trig-identity-card {
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(240, 234, 224, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+}
+
+.trig-identity-formula {
+  font-family: var(--font-math);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0E1D61;
+  background: rgba(246, 241, 233, 0.9);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+}

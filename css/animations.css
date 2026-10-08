@@ -1,0 +1,223 @@
+/* ==========================================================================
+   OG - Animations & Micro-Interactions
+   Premium Ivory + Gold + Deep Atlas Navy Motion System
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Ambient Orb Pulse
+   -------------------------------------------------------------------------- */
+@keyframes pulseGlow {
+  0%   { transform: scale(1)    translate(0, 0);       opacity: 0.45; }
+  33%  { transform: scale(1.12) translate(28px, 18px);  opacity: 0.68; }
+  66%  { transform: scale(0.94) translate(-16px, 12px); opacity: 0.52; }
+  100% { transform: scale(1)    translate(0, 0);       opacity: 0.45; }
+}
+
+/* --------------------------------------------------------------------------
+   2. Status Indicator Dot Pulse (gentle, non-distracting)
+   -------------------------------------------------------------------------- */
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%       { transform: scale(1.25); opacity: 0.65; }
+}
+
+/* --------------------------------------------------------------------------
+   3. Mathematical Symbols — Smooth Floating Drift
+      Uses ease-in-out cubic-bezier for natural buoyancy
+   -------------------------------------------------------------------------- */
+@keyframes floatDrift1 {
+  0%   { transform: translateY(0px)   rotate(0deg); }
+  25%  { transform: translateY(-12px) rotate(1.5deg); }
+  50%  { transform: translateY(-22px) rotate(3deg); }
+  75%  { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0px)   rotate(0deg); }
+}
+
+@keyframes floatDrift2 {
+  0%   { transform: translateY(0px)   rotate(0deg); }
+  30%  { transform: translateY(-18px) rotate(-2deg); }
+  50%  { transform: translateY(-30px) rotate(-4deg); }
+  70%  { transform: translateY(-14px) rotate(-1.5deg); }
+  100% { transform: translateY(0px)   rotate(0deg); }
+}
+
+@keyframes floatDrift3 {
+  0%   { transform: translateY(0px)   rotate(0deg); }
+  40%  { transform: translateY(-16px) rotate(4deg); }
+  60%  { transform: translateY(-20px) rotate(5deg); }
+  80%  { transform: translateY(-8px)  rotate(2deg); }
+  100% { transform: translateY(0px)   rotate(0deg); }
+}
+
+/* --------------------------------------------------------------------------
+   4. Sparkle Rotation (subtle, slow)
+   -------------------------------------------------------------------------- */
+@keyframes rotateSparkle {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   5. Page View Transitions — Smooth Enter & Exit
+   -------------------------------------------------------------------------- */
+
+/* View Enter: slides up with spring easing */
+@keyframes viewEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.992);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0)   scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* View Exit: fades & slides up slightly */
+@keyframes viewExit {
+  from {
+    opacity: 1;
+    transform: translateY(0)   scale(1);
+    filter: blur(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.996);
+    filter: blur(1px);
+  }
+}
+
+/* Legacy alias kept for backward compatibility */
+@keyframes viewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.992);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Enter class applied to all new views */
+.view-animate-in {
+  animation: viewEnter 0.44s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity, transform, filter;
+}
+
+/* Exit class — added by JS router before unmounting */
+.view-animate-out {
+  animation: viewExit 0.22s cubic-bezier(0.4, 0, 1, 1) both;
+  pointer-events: none;
+  will-change: opacity, transform, filter;
+}
+
+/* --------------------------------------------------------------------------
+   6. Staggered Card Reveal (for module grids)
+   -------------------------------------------------------------------------- */
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.module-card,
+.quick-tool-card {
+  animation: cardReveal 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Stagger delay per card index — up to 12 cards */
+.module-card:nth-child(1),  .quick-tool-card:nth-child(1)  { animation-delay: 0.04s; }
+.module-card:nth-child(2),  .quick-tool-card:nth-child(2)  { animation-delay: 0.08s; }
+.module-card:nth-child(3),  .quick-tool-card:nth-child(3)  { animation-delay: 0.12s; }
+.module-card:nth-child(4),  .quick-tool-card:nth-child(4)  { animation-delay: 0.16s; }
+.module-card:nth-child(5),  .quick-tool-card:nth-child(5)  { animation-delay: 0.20s; }
+.module-card:nth-child(6),  .quick-tool-card:nth-child(6)  { animation-delay: 0.24s; }
+.module-card:nth-child(7),  .quick-tool-card:nth-child(7)  { animation-delay: 0.28s; }
+.module-card:nth-child(8),  .quick-tool-card:nth-child(8)  { animation-delay: 0.32s; }
+.module-card:nth-child(9),  .quick-tool-card:nth-child(9)  { animation-delay: 0.36s; }
+.module-card:nth-child(10), .quick-tool-card:nth-child(10) { animation-delay: 0.40s; }
+.module-card:nth-child(11), .quick-tool-card:nth-child(11) { animation-delay: 0.44s; }
+.module-card:nth-child(12), .quick-tool-card:nth-child(12) { animation-delay: 0.48s; }
+
+/* --------------------------------------------------------------------------
+   7. Skeleton / Loading Shimmer
+   -------------------------------------------------------------------------- */
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(232, 224, 210, 0.4) 25%,
+    rgba(184, 154, 90, 0.15) 50%,
+    rgba(232, 224, 210, 0.4) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   8. Result Pop-In (for calculation result panels)
+   -------------------------------------------------------------------------- */
+@keyframes resultPop {
+  0%   { opacity: 0; transform: scale(0.94) translateY(6px); }
+  60%  { opacity: 1; transform: scale(1.02) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+.result-animate {
+  animation: resultPop 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* --------------------------------------------------------------------------
+   9. Smooth Scroll Reveal (for sections within a view)
+   -------------------------------------------------------------------------- */
+@keyframes sectionReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section-reveal {
+  animation: sectionReveal 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* --------------------------------------------------------------------------
+   10. Accessibility: Respect Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ambient-glow,
+  .float-symbol,
+  .view-animate-in,
+  .view-animate-out,
+  .module-card,
+  .quick-tool-card,
+  .skeleton-shimmer,
+  .result-animate,
+  .section-reveal {
+    animation: none !important;
+    filter: none !important;
+  }
+}

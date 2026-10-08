@@ -1,0 +1,158 @@
+/* ==========================================================================
+   OG - Module 07: Binomial Theorem & Pascal Triangle Styling
+   Light Liquid Glass: Ivory (#E8E0D2) + Gold (#B89A5A) + Deep Atlas Navy (#0E1D61)
+   ========================================================================== */
+
+.binom-module-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.binom-hero-card {
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(242, 236, 227, 0.78);
+}
+
+.binom-hero-card::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(184, 154, 90, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Pascal's Triangle Styling
+   -------------------------------------------------------------------------- */
+.pascal-visualizer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pascal-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.pascal-pyramid-viewport {
+  overflow-x: auto;
+  padding: 32px 16px;
+  border-radius: var(--radius-xl);
+  background: rgba(240, 234, 224, 0.75);
+  border: 1.5px solid rgba(184, 154, 90, 0.3);
+  backdrop-filter: blur(20px);
+  box-shadow: inset 0 0 20px rgba(14, 29, 97, 0.05);
+}
+
+.pascal-pyramid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 600px;
+}
+
+.pascal-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.pascal-row-tag {
+  font-family: var(--font-math);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0E1D61;
+  width: 36px;
+  text-align: right;
+}
+
+.pascal-sum-tag {
+  font-family: var(--font-math);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #B89A5A;
+  width: 60px;
+  text-align: left;
+}
+
+.pascal-cells-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pascal-cell {
+  min-width: 48px;
+  height: 48px;
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.pascal-cell:hover {
+  background: #FFFFFF;
+  border-color: #B89A5A;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(14, 29, 97, 0.08), 0 0 14px rgba(184, 154, 90, 0.3);
+}
+
+.pascal-cell.cell-inspected {
+  background: #B89A5A;
+  border-color: #B89A5A;
+  box-shadow: 0 0 20px rgba(184, 154, 90, 0.45);
+  transform: scale(1.12);
+}
+
+.pascal-cell.cell-inspected .cell-val {
+  color: #0E1D61;
+}
+
+.pascal-cell.cell-parent {
+  background: #0E1D61;
+  border-color: #B89A5A;
+  box-shadow: 0 0 16px rgba(14, 29, 97, 0.25);
+}
+
+.pascal-cell.cell-parent .cell-val {
+  color: #E8E0D2;
+}
+
+.cell-val {
+  font-family: var(--font-math);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0E1D61;
+}
+
+.cell-sub {
+  font-family: var(--font-math);
+  font-size: 0.65rem;
+  color: rgba(14, 29, 97, 0.6);
+}
+
+.pascal-inspection-panel {
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(240, 234, 224, 0.75);
+}

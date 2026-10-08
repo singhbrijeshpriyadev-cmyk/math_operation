@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG • Mathematics • Calculate • Understand</title>
+  <meta name="description" content="OG - Premium Mathematics Operation and Learning Platform featuring 24 curated modules, scientific calculator, formula library, and practice system with a luxury Ivory, Gold, and Deep Atlas Navy Liquid Glass UI.">
+  <meta name="theme-color" content="#E8E0D2">
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Application Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/glass.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/modules.css">
+  <link rel="stylesheet" href="css/algebra.css">
+  <link rel="stylesheet" href="css/geometry.css">
+  <link rel="stylesheet" href="css/sets.css">
+  <link rel="stylesheet" href="css/trigonometry.css">
+  <link rel="stylesheet" href="css/combinatorics.css">
+  <link rel="stylesheet" href="css/binomial.css">
+  <link rel="stylesheet" href="css/matrices.css">
+  <link rel="stylesheet" href="css/linearAlgebra.css">
+  <link rel="stylesheet" href="css/vectorsOptimization.css">
+  <link rel="stylesheet" href="css/calculus.css">
+  <link rel="stylesheet" href="css/statistics.css">
+  <link rel="stylesheet" href="css/graphing.css">
+  <link rel="stylesheet" href="css/calculator.css">
+  <link rel="stylesheet" href="css/formulas.css">
+  <link rel="stylesheet" href="css/practice.css">
+  <link rel="stylesheet" href="css/history.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Ambient Mathematical Background -->
+  <div class="math-grid-bg" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-3" aria-hidden="true"></div>
+  <div id="floating-symbols-container" class="floating-symbols-container" aria-hidden="true"></div>
+
+  <!-- Root Application Container -->
+  <div id="app">
+    <!-- Desktop Floating Liquid Glass Navigation -->
+    <header class="navbar-desktop-container">
+      <nav class="navbar-desktop glass-nav" aria-label="Desktop Primary Navigation">
+        <!-- Brand Logo -->
+        <a href="#/" class="nav-brand" id="brand-link">
+          <div class="nav-brand-logo-mark">
+            <span>OG</span>
+          </div>
+          <div class="nav-brand-text">
+            <span class="nav-brand-title">OG</span>
+            <span class="nav-brand-subtitle">Mathematics • Calculate • Understand</span>
+          </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+          <li class="nav-link-item"><a href="#/" class="active" id="nav-desktop-home">Home</a></li>
+          <li class="nav-link-item"><a href="#/calculator" id="nav-desktop-calc">Calculator</a></li>
+          <li class="nav-link-item"><a href="#/graph" id="nav-desktop-graph">Graph</a></li>
+          <li class="nav-link-item"><a href="#/algebra" id="nav-desktop-algebra">Algebra</a></li>
+          <li class="nav-link-item"><a href="#/linear-algebra" id="nav-desktop-linear-algebra">Linear Alg</a></li>
+          <li class="nav-link-item"><a href="#/vectors-optimization" id="nav-desktop-vectors-optimization">Vectors & Opt</a></li>
+          <li class="nav-link-item"><a href="#/geometry" id="nav-desktop-geometry">Geometry</a></li>
+          <li class="nav-link-item"><a href="#/calculus" id="nav-desktop-calculus">Calculus</a></li>
+          <li class="nav-link-item"><a href="#/statistics" id="nav-desktop-statistics">Stats</a></li>
+          <li class="nav-link-item"><a href="#/probability" id="nav-desktop-probability">Prob</a></li>
+          <li class="nav-link-item"><a href="#/modules" id="nav-desktop-modules">Modules</a></li>
+          <li class="nav-link-item"><a href="#/formulas" id="nav-desktop-formulas">Formulas</a></li>
+          <li class="nav-link-item"><a href="#/practice" id="nav-desktop-practice">Practice</a></li>
+          <li class="nav-link-item"><a href="#/history" id="nav-desktop-history">History</a></li>
+          <li class="nav-link-item"><a href="#/settings" id="nav-desktop-settings">Settings</a></li>
+        </ul>
+
+        <!-- Action / Status Indicator -->
+        <div class="nav-actions">
+          <div class="nav-status-indicator" title="Application Architecture Online">
+            <span class="status-dot"></span>
+            <span>Online</span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Top Compact Header -->
+    <header class="mobile-top-header" aria-label="Mobile Header">
+      <a href="#/" class="nav-brand" style="gap: 10px;">
+        <div class="nav-brand-logo-mark" style="width: 32px; height: 32px; border-radius: 8px;">
+          <span style="font-size: 1rem;">OG</span>
+        </div>
+        <span class="nav-brand-title" style="font-size: 1.15rem;">OG Math</span>
+      </a>
+      <a href="#/calculator" class="glass-btn glass-btn-primary" style="min-height: 36px; padding: 4px 14px; font-size: 0.8rem;">
+        Calculate
+      </a>
+    </header>
+
+    <!-- Main Dynamic Content Region (Injected by Router) -->
+    <main id="main-content" class="main-content" role="main" tabindex="-1">
+      <!-- Views will render here -->
+    </main>
+
+    <!-- Mobile Floating Bottom Navigation Bar -->
+    <nav class="navbar-mobile-bottom glass-nav" aria-label="Mobile Bottom Navigation">
+      <a href="#/" class="mobile-nav-link active" id="nav-mobile-home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Home</span>
+      </a>
+      <a href="#/calculator" class="mobile-nav-link" id="nav-mobile-calc">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"></path></svg>
+        <span>Calc</span>
+      </a>
+      <a href="#/graph" class="mobile-nav-link" id="nav-mobile-graph">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <span>Graph</span>
+      </a>
+      <a href="#/modules" class="mobile-nav-link" id="nav-mobile-modules">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Modules</span>
+      </a>
+      <a href="#/formulas" class="mobile-nav-link" id="nav-mobile-formulas">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Formulas</span>
+      </a>
+      <a href="#/practice" class="mobile-nav-link" id="nav-mobile-practice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        <span>Practice</span>
+      </a>
+      <a href="#/history" class="mobile-nav-link" id="nav-mobile-history">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>History</span>
+      </a>
+      <a href="#/settings" class="mobile-nav-link" id="nav-mobile-settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Application Bootstrap -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

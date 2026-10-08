@@ -1,0 +1,1045 @@
+/**
+ * OG - Statistics & Probability System Stylesheet
+ * Strict OG Palette:
+ * - IVORY: #E8E0D2 (~50% Main Surfaces & Backgrounds)
+ * - GOLD: #B89A5A (~30% Accents, Selected states, Highlights)
+ * - DEEP ATLAS NAVY: #0E1D61 (~20% Typography, Structure, Charts)
+ * Premium Liquid Glass Architecture
+ */
+
+/* ==========================================================================
+   WORKSPACE CONTAINERS & HEADERS
+   ========================================================================== */
+.stats-workspace,
+.prob-workspace,
+.stats-tools-workspace,
+.prob-tools-workspace {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 20px 48px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.stats-header,
+.prob-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: var(--radius-lg, 16px);
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  box-shadow: 0 8px 32px rgba(14, 29, 97, 0.05);
+}
+
+.stats-badge,
+.prob-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: rgba(184, 154, 90, 0.15);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #0E1D61;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stats-badge-dot,
+.prob-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #B89A5A;
+  box-shadow: 0 0 8px #B89A5A;
+}
+
+.stats-subbadge,
+.prob-subbadge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(14, 29, 97, 0.6);
+  background: rgba(14, 29, 97, 0.06);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.stats-title,
+.prob-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0E1D61;
+  margin: 4px 0;
+  letter-spacing: -0.02em;
+  font-family: var(--font-math, 'Outfit', sans-serif);
+}
+
+.stats-subtitle,
+.prob-subtitle {
+  font-size: 1.05rem;
+  color: rgba(14, 29, 97, 0.75);
+  margin: 0;
+  font-style: italic;
+  font-family: var(--font-math, 'Outfit', sans-serif);
+}
+
+.stats-quick-actions,
+.prob-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   BUTTONS & CONTROLS
+   ========================================================================== */
+.stats-btn,
+.prob-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-math, 'Outfit', sans-serif);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.stats-btn-primary,
+.prob-btn-primary {
+  background: #0E1D61;
+  color: #E8E0D2;
+  box-shadow: 0 4px 14px rgba(14, 29, 97, 0.2);
+}
+
+.stats-btn-primary:hover,
+.prob-btn-primary:hover {
+  background: #071038;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(14, 29, 97, 0.3);
+}
+
+.stats-btn-gold,
+.prob-btn-gold {
+  background: #B89A5A;
+  color: #0E1D61;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(184, 154, 90, 0.25);
+}
+
+.stats-btn-gold:hover,
+.prob-btn-gold:hover {
+  background: #c9ab6b;
+  transform: translateY(-1px);
+}
+
+.stats-btn-outline,
+.prob-btn-outline {
+  background: rgba(246, 241, 233, 0.7);
+  color: #0E1D61;
+  border-color: rgba(184, 154, 90, 0.35);
+}
+
+.stats-btn-outline:hover,
+.prob-btn-outline:hover {
+  background: rgba(184, 154, 90, 0.15);
+  border-color: #B89A5A;
+}
+
+.stats-btn-xs {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  background: rgba(14, 29, 97, 0.08);
+  color: #0E1D61;
+  border: 1px solid rgba(14, 29, 97, 0.15);
+}
+
+.stats-btn-xs:hover {
+  background: rgba(184, 154, 90, 0.2);
+  border-color: #B89A5A;
+}
+
+/* ==========================================================================
+   PRESETS BAR
+   ========================================================================== */
+.stats-presets-bar,
+.prob-presets-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: rgba(244, 239, 230, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+}
+
+.stats-presets-label,
+.prob-presets-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(14, 29, 97, 0.6);
+  margin-right: 4px;
+}
+
+.stats-preset-chip,
+.prob-preset-chip {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.stats-preset-chip:hover,
+.prob-preset-chip:hover {
+  background: rgba(184, 154, 90, 0.15);
+  border-color: #B89A5A;
+}
+
+.stats-preset-chip.active,
+.prob-preset-chip.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+}
+
+/* ==========================================================================
+   INPUT PANELS & MODE TOGGLES
+   ========================================================================== */
+.stats-input-card,
+.prob-input-card {
+  padding: 20px 24px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stats-input-header,
+.prob-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stats-input-title,
+.prob-input-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.stats-mode-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 29, 97, 0.06);
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+
+.stats-toggle-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(14, 29, 97, 0.65);
+  margin-right: 4px;
+}
+
+.stats-toggle-btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: rgba(14, 29, 97, 0.7);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.stats-toggle-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  box-shadow: 0 2px 6px rgba(14, 29, 97, 0.2);
+}
+
+.stats-input-row {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.prob-inputs-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.prob-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prob-field-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0E1D61;
+}
+
+.stats-textarea {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #0E1D61;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.stats-textarea:focus,
+.prob-input-field:focus {
+  outline: none;
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.2);
+}
+
+.stats-input-hint {
+  font-size: 0.8rem;
+  color: rgba(14, 29, 97, 0.6);
+  font-style: italic;
+}
+
+.stats-analyze-btn {
+  white-space: nowrap;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   SPLIT WORKSPACE LAYOUT
+   ========================================================================== */
+.stats-split-grid,
+.prob-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 20px;
+}
+
+@media (max-width: 960px) {
+  .stats-split-grid,
+  .prob-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stats-panel,
+.prob-panel {
+  padding: 22px 24px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.stats-panel-header,
+.prob-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.2);
+  padding-bottom: 12px;
+}
+
+.stats-panel-title,
+.prob-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0E1D61;
+  letter-spacing: 0.04em;
+}
+
+.stats-indicator-dot,
+.prob-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0E1D61;
+}
+
+.stats-indicator-dot.gold,
+.prob-indicator-dot.gold {
+  background: #B89A5A;
+}
+
+.stats-panel-badge,
+.prob-panel-badge {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: rgba(14, 29, 97, 0.08);
+  color: #0E1D61;
+}
+
+/* ==========================================================================
+   METRICS GRID
+   ========================================================================== */
+.stats-metrics-grid,
+.prob-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.stats-metric-card,
+.prob-metric-card {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stats-metric-card.highlight,
+.prob-metric-card.highlight {
+  background: rgba(184, 154, 90, 0.12);
+  border-color: rgba(184, 154, 90, 0.45);
+}
+
+.stats-metric-label,
+.prob-metric-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(14, 29, 97, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.stats-metric-val,
+.prob-metric-val {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0E1D61;
+}
+
+.prob-metric-sub {
+  font-size: 0.75rem;
+  color: rgba(14, 29, 97, 0.6);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+.stats-submetrics-box,
+.prob-submetrics-box {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stats-submetric-row,
+.prob-submetric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #0E1D61;
+}
+
+/* ==========================================================================
+   CHART & CANVAS CONTAINER
+   ========================================================================== */
+.stats-chart-selector,
+.prob-view-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  background: rgba(14, 29, 97, 0.06);
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.stats-chart-btn,
+.prob-view-btn {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: rgba(14, 29, 97, 0.7);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.stats-chart-btn.active,
+.prob-view-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+}
+
+.stats-canvas-container,
+.prob-canvas-container {
+  height: 360px;
+  width: 100%;
+  position: relative;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 12px;
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  overflow: hidden;
+}
+
+.stats-canvas-container canvas,
+.prob-canvas-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stats-canvas-footer,
+.prob-canvas-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(14, 29, 97, 0.65);
+  font-style: italic;
+}
+
+/* ==========================================================================
+   7-STAGE MATHEMATICAL DERIVATION FLOW
+   ========================================================================== */
+.stats-derivation-card,
+.prob-derivation-card {
+  padding: 24px 28px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.stats-derivation-header,
+.prob-derivation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-stage-badge,
+.prob-stage-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #B89A5A;
+  color: #0E1D61;
+  letter-spacing: 0.05em;
+}
+
+.stats-derivation-title,
+.prob-derivation-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0E1D61;
+  letter-spacing: 0.02em;
+}
+
+.stats-stages-flow,
+.prob-stages-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stats-stage-item,
+.prob-stage-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(184, 154, 90, 0.2);
+}
+
+.stats-stage-num,
+.prob-stage-num {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #B89A5A;
+  background: rgba(184, 154, 90, 0.15);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.stats-stage-content,
+.prob-stage-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stats-stage-label,
+.prob-stage-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(14, 29, 97, 0.6);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.stats-stage-text,
+.prob-stage-text {
+  font-size: 0.95rem;
+  color: #0E1D61;
+  line-height: 1.4;
+}
+
+.highlight-gold {
+  color: #B89A5A !important;
+  font-weight: 700;
+}
+
+.highlight-navy {
+  color: #0E1D61 !important;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   TOOLS GRID SECTION
+   ========================================================================== */
+.stats-tools-section,
+.prob-tools-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.stats-tools-header,
+.prob-tools-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stats-tools-title,
+.prob-tools-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0E1D61;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.stats-tools-sub,
+.prob-tools-sub {
+  font-size: 0.9rem;
+  color: rgba(14, 29, 97, 0.65);
+  margin: 4px 0 0;
+}
+
+.stats-curriculum-link,
+.prob-curriculum-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0E1D61;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.stats-curriculum-link:hover,
+.prob-curriculum-link:hover {
+  color: #B89A5A;
+}
+
+.stats-tools-grid,
+.prob-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.stats-tool-card,
+.prob-tool-card {
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.stats-tool-card:hover,
+.prob-tool-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #B89A5A;
+  box-shadow: 0 8px 24px rgba(184, 154, 90, 0.15);
+}
+
+.stats-tool-top,
+.prob-tool-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-tool-num,
+.prob-tool-num {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #B89A5A;
+}
+
+.stats-tool-icon,
+.prob-tool-icon {
+  font-size: 1.3rem;
+}
+
+.stats-tool-name,
+.prob-tool-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.stats-tool-desc,
+.prob-tool-desc {
+  font-size: 0.85rem;
+  color: rgba(14, 29, 97, 0.65);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   INTERACTIVE DATA TABLE & FORM FIELDS
+   ========================================================================== */
+.stats-table-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stats-glass-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.stats-glass-table th {
+  padding: 12px 14px;
+  background: rgba(14, 29, 97, 0.08);
+  color: #0E1D61;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(184, 154, 90, 0.35);
+}
+
+.stats-glass-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(184, 154, 90, 0.2);
+  color: #0E1D61;
+}
+
+.stats-glass-table tfoot td {
+  padding: 12px 14px;
+  background: rgba(184, 154, 90, 0.1);
+  border-top: 2px solid rgba(184, 154, 90, 0.35);
+  font-weight: 700;
+}
+
+.stats-table-input {
+  width: 90px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(184, 154, 90, 0.3);
+  background: #ffffff;
+  color: #0E1D61;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+.stats-del-btn {
+  background: rgba(185, 28, 28, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(185, 28, 28, 0.25);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.stats-del-btn:hover {
+  background: #b91c1c;
+  color: #ffffff;
+}
+
+.stats-input-field,
+.prob-input-field,
+.stats-select-field,
+.prob-select-field {
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  color: #0E1D61;
+  font-size: 0.9rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+/* ==========================================================================
+   PRACTICE LAB STYLING
+   ========================================================================== */
+.stats-practice-score-bar {
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: rgba(184, 154, 90, 0.18);
+  border: 1px solid rgba(184, 154, 90, 0.4);
+  color: #0E1D61;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.stats-practice-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.stats-practice-card {
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stats-practice-num {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #B89A5A;
+  text-transform: uppercase;
+}
+
+.stats-practice-q {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0E1D61;
+}
+
+.stats-practice-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .stats-practice-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stats-practice-opt-btn {
+  text-align: left;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(246, 241, 233, 0.8);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.stats-practice-opt-btn:hover:not(:disabled) {
+  background: rgba(184, 154, 90, 0.2);
+  border-color: #B89A5A;
+}
+
+.stats-practice-opt-btn.correct {
+  background: rgba(34, 197, 94, 0.18) !important;
+  border-color: #15803d !important;
+  color: #15803d !important;
+}
+
+.stats-practice-opt-btn.incorrect {
+  background: rgba(239, 68, 68, 0.18) !important;
+  border-color: #b91c1c !important;
+  color: #b91c1c !important;
+}
+
+.stats-practice-feedback {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(14, 29, 97, 0.05);
+  border-left: 3px solid #0E1D61;
+  font-size: 0.9rem;
+  color: #0E1D61;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   ERROR & RESULT BOXES
+   ========================================================================== */
+.stats-error-box,
+.prob-error-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #b91c1c;
+}
+
+.stats-result-box,
+.prob-result-box {
+  padding: 18px 22px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+}
+
+.stats-result-box h3,
+.prob-result-box h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+  color: #0E1D61;
+}
+
+.stats-result-box p,
+.prob-result-box p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #0E1D61;
+}
+
+/* Breadcrumbs & Tool Pills */
+.stats-tools-topbar,
+.prob-tools-topbar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 154, 90, 0.3);
+}
+
+.stats-tools-breadcrumb,
+.prob-tools-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0E1D61;
+}
+
+.stats-back-btn,
+.prob-back-btn {
+  color: #B89A5A;
+  text-decoration: none;
+}
+
+.stats-back-btn:hover,
+.prob-back-btn:hover {
+  text-decoration: underline;
+}
+
+.stats-tools-pills-bar,
+.prob-tools-pills-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stats-pill-btn,
+.prob-pill-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  color: #0E1D61;
+  transition: all 0.15s ease;
+}
+
+.stats-pill-btn:hover,
+.prob-pill-btn:hover {
+  background: rgba(184, 154, 90, 0.15);
+  border-color: #B89A5A;
+}
+
+.stats-pill-btn.active,
+.prob-pill-btn.active {
+  background: #0E1D61;
+  color: #E8E0D2;
+  border-color: #0E1D61;
+}

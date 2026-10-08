@@ -1,0 +1,205 @@
+/* ==========================================================================
+   OG - Responsive Layout & Device Adaptations
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Tablet Breakpoints (<= 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid-split {
+    grid-template-columns: 1fr;
+  }
+
+  .module-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Breakpoints (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Switch from Desktop to Mobile Navigation */
+  .navbar-desktop-container {
+    display: none;
+  }
+
+  .mobile-top-header {
+    display: flex;
+  }
+
+  .navbar-mobile-bottom {
+    display: flex;
+  }
+
+  main.main-content {
+    padding-top: 76px;
+    padding-bottom: 96px; /* Offset for floating bottom nav */
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 24px 0 20px;
+    gap: 16px;
+  }
+
+  .hero-brand {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.35rem;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .glass-btn {
+    width: 100%;
+  }
+
+  .hero-metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .metric-card {
+    padding: 14px 12px;
+  }
+
+  .metric-value {
+    font-size: 1.4rem;
+  }
+
+  /* Quick Tools & Modules */
+  .quick-tools-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .category-filter-pills {
+    width: 100%;
+  }
+
+  .formula-shortcuts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Calculator Mobile Adjustments */
+  .calc-frame {
+    padding: 18px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .calc-screen {
+    padding: 14px 16px;
+    min-height: 110px;
+  }
+
+  .calc-result-line {
+    font-size: 2.2rem;
+  }
+
+  .calc-keypad-scientific {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+  }
+
+  .calc-keypad-basic {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .calc-btn {
+    min-height: 44px;
+    font-size: 0.85rem;
+    padding: 0 4px;
+  }
+
+  .calc-history-items-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Production Dashboard Mobile Refinements */
+  .hero-orbit-container {
+    inset: -10px -10px;
+  }
+
+  .hero-orbit-glyph {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  .hero-orbit-glyph-1 { left: 1%; top: 3%; }
+  .hero-orbit-glyph-2 { right: 1%; top: 6%; }
+  .hero-orbit-glyph-3 { left: 2%; bottom: 4%; }
+  .hero-orbit-glyph-4 { right: 2%; bottom: 2%; }
+
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .activity-result-badge {
+    align-self: flex-end;
+  }
+
+  .formula-display-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .formula-display-box .glass-btn {
+    align-self: flex-end;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small Mobile Devices (<= 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .hero-metrics-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .module-card {
+    padding: 18px;
+  }
+
+  .mobile-nav-link {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+  }
+
+  .mobile-nav-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}

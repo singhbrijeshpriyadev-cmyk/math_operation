@@ -1,0 +1,411 @@
+/* ==========================================================================
+   OG - Light Liquid Glass Design System
+   Ivory (#E8E0D2) + Gold (#B89A5A) + Deep Atlas Navy (#0E1D61)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Base Liquid Glass Surface (.glass & .glass-surface)
+   -------------------------------------------------------------------------- */
+.glass,
+.glass-surface {
+  background: rgba(232, 224, 210, 0.62);
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(14, 29, 97, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal), 
+              border-color var(--transition-normal), 
+              box-shadow var(--transition-normal), 
+              background var(--transition-normal);
+}
+
+/* Inner Specular Highlight (Crisp top-edge light glare) */
+.glass::before,
+.glass-surface::before,
+.glass-light::before,
+.glass-elevated::before,
+.glass-panel::before,
+.glass-card::before,
+.glass-navigation::before,
+.glass-nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(184, 154, 90, 0.35) 45%,
+    rgba(255, 255, 255, 0.00) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   2. Light Translucent Glass Tier (.glass-light)
+   -------------------------------------------------------------------------- */
+.glass-light {
+  background: rgba(232, 224, 210, 0.45);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(184, 154, 90, 0.18);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 18px rgba(14, 29, 97, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.glass-light:hover {
+  background: rgba(232, 224, 210, 0.65);
+  border-color: rgba(184, 154, 90, 0.35);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   3. Elevated Glass Layer (.glass-elevated)
+   -------------------------------------------------------------------------- */
+.glass-elevated {
+  background: rgba(246, 241, 233, 0.88);
+  backdrop-filter: blur(28px) saturate(130%);
+  -webkit-backdrop-filter: blur(28px) saturate(130%);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 50px rgba(14, 29, 97, 0.12);
+  position: relative;
+  transition: transform var(--transition-normal), 
+              border-color var(--transition-normal), 
+              box-shadow var(--transition-normal);
+  will-change: transform, border-color, box-shadow;
+}
+
+.glass-elevated:hover {
+  border-color: #B89A5A;
+  box-shadow: 0 24px 60px rgba(14, 29, 97, 0.15),
+              0 0 20px rgba(184, 154, 90, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   4. Production Spatial Glass Panel (.glass-panel)
+   -------------------------------------------------------------------------- */
+.glass-panel {
+  background: rgba(242, 236, 227, 0.78);
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 12px 40px rgba(14, 29, 97, 0.08);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-normal), 
+              border-color var(--transition-normal), 
+              box-shadow var(--transition-normal);
+  will-change: transform, border-color, box-shadow;
+}
+
+.glass-panel:hover {
+  border-color: #B89A5A;
+  box-shadow: 0 16px 48px rgba(14, 29, 97, 0.12),
+              0 0 25px rgba(184, 154, 90, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Spatial Cards (.glass-card & .quick-tool-card & .module-card)
+   With Cursor-Following Gold Reflection
+   -------------------------------------------------------------------------- */
+.glass-card {
+  position: relative;
+  background: rgba(240, 234, 224, 0.72);
+  backdrop-filter: blur(24px) saturate(120%);
+  -webkit-backdrop-filter: blur(24px) saturate(120%);
+  border: 1px solid rgba(184, 154, 90, 0.22);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 32px rgba(14, 29, 97, 0.07);
+  padding: 24px;
+  overflow: hidden;
+  transition: transform var(--transition-normal), 
+              border-color var(--transition-normal), 
+              box-shadow var(--transition-normal),
+              background var(--transition-normal);
+  will-change: transform, border-color, box-shadow;
+}
+
+/* Dynamic Cursor-Following Gold Reflection Layer */
+.glass-card::after,
+.quick-tool-card::after,
+.module-card::after,
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    380px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%),
+    rgba(184, 154, 90, 0.16) 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    transparent 65%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.glass-card:hover,
+.quick-tool-card:hover,
+.module-card:hover {
+  transform: translateY(-3px);
+  border-color: #B89A5A;
+  background: rgba(246, 241, 233, 0.85);
+  box-shadow: 0 16px 44px rgba(14, 29, 97, 0.12),
+              0 0 20px rgba(184, 154, 90, 0.25);
+}
+
+.glass-card:hover::after,
+.quick-tool-card:hover::after,
+.module-card:hover::after {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   6. Button System (.glass-button & .glass-btn)
+   PRIMARY BUTTON: Background #B89A5A, Text #0E1D61
+   SECONDARY BUTTON: Background transparent Ivory glass, Text #0E1D61, Border rgba(14,29,97,0.20)
+   -------------------------------------------------------------------------- */
+.glass-button,
+.glass-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  min-height: 44px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-navy);
+  border-radius: var(--radius-pill);
+  background: rgba(232, 224, 210, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(14, 29, 97, 0.20);
+  box-shadow: var(--shadow-subtle);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition: transform var(--transition-normal), 
+              border-color var(--transition-normal), 
+              box-shadow var(--transition-normal), 
+              background var(--transition-normal),
+              color var(--transition-normal);
+}
+
+.glass-button svg,
+.glass-btn svg {
+  width: 18px;
+  height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  flex-shrink: 0;
+}
+
+/* Shimmer reflection highlight on button */
+.glass-button::before,
+.glass-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.glass-button:hover,
+.glass-btn:hover {
+  transform: translateY(-2px);
+  border-color: #B89A5A;
+  background: rgba(244, 239, 230, 0.85);
+  box-shadow: 0 8px 24px rgba(14, 29, 97, 0.10),
+              0 0 16px rgba(184, 154, 90, 0.25);
+}
+
+.glass-button:hover::before,
+.glass-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.glass-button:active,
+.glass-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Primary Button: Pure Gold Background, Deep Atlas Navy Text */
+.glass-btn-primary,
+.glass-button-primary {
+  background: #B89A5A;
+  color: #0E1D61;
+  border: 1px solid #B89A5A;
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(184, 154, 90, 0.35);
+}
+
+.glass-btn-primary:hover,
+.glass-button-primary:hover {
+  background: #A58748;
+  border-color: #A58748;
+  color: #0E1D61;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(184, 154, 90, 0.45);
+}
+
+/* Secondary Button: Transparent Ivory Glass, Navy Border/Text, Gold Hover */
+.glass-btn-secondary,
+.glass-btn-outline {
+  background: rgba(232, 224, 210, 0.6);
+  color: #0E1D61;
+  border: 1px solid rgba(14, 29, 97, 0.20);
+}
+
+.glass-btn-secondary:hover,
+.glass-btn-outline:hover {
+  background: rgba(246, 241, 233, 0.85);
+  border-color: #B89A5A;
+  color: #0E1D61;
+  box-shadow: 0 6px 20px rgba(14, 29, 97, 0.08), 0 0 16px rgba(184, 154, 90, 0.25);
+}
+
+.glass-btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-pill);
+}
+
+/* --------------------------------------------------------------------------
+   7. Glass Inputs & Interactive Controls (.glass-input)
+   -------------------------------------------------------------------------- */
+.glass-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: #0E1D61;
+  background: rgba(246, 241, 233, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 154, 90, 0.30);
+  border-radius: var(--radius-pill);
+  outline: none;
+  transition: border-color var(--transition-smooth),
+              box-shadow var(--transition-smooth),
+              background var(--transition-smooth);
+  will-change: border-color, box-shadow;
+}
+
+.glass-input::placeholder {
+  color: rgba(14, 29, 97, 0.45);
+}
+
+.glass-input:focus {
+  background: #FFFFFF;
+  border-color: #B89A5A;
+  box-shadow: 0 0 0 3px rgba(184, 154, 90, 0.22), 0 0 18px rgba(184, 154, 90, 0.28);
+}
+
+/* --------------------------------------------------------------------------
+   8. Floating Spatial Glass Navigation Capsule (.glass-nav & .glass-navigation)
+   Deep Atlas Navy Capsule + Ivory Text + Gold Highlights
+   -------------------------------------------------------------------------- */
+.glass-nav,
+.glass-navigation {
+  background: rgba(14, 29, 97, 0.92);
+  backdrop-filter: blur(28px) saturate(140%);
+  -webkit-backdrop-filter: blur(28px) saturate(140%);
+  border: 1px solid rgba(184, 154, 90, 0.35);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 16px 45px rgba(14, 29, 97, 0.25),
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.glass-nav:hover,
+.glass-navigation:hover {
+  border-color: rgba(184, 154, 90, 0.55);
+  box-shadow: 0 20px 50px rgba(14, 29, 97, 0.30),
+              0 0 25px rgba(184, 154, 90, 0.20);
+}
+
+/* --------------------------------------------------------------------------
+   Interactive Glass Surface Alias
+   -------------------------------------------------------------------------- */
+.glass-interactive {
+  background: rgba(232, 224, 210, 0.70);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: var(--radius-sm);
+  color: #0E1D61;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.glass-interactive:hover {
+  background: rgba(246, 241, 233, 0.9);
+  border-color: #B89A5A;
+  box-shadow: var(--shadow-subtle), 0 0 16px rgba(184, 154, 90, 0.25);
+  transform: translateY(-2px);
+}
+
+.glass-interactive:active {
+  transform: translateY(0px) scale(0.985);
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion Support
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .glass,
+  .glass-light,
+  .glass-elevated,
+  .glass-button,
+  .glass-btn,
+  .glass-card,
+  .glass-panel,
+  .glass-nav,
+  .glass-navigation,
+  .quick-tool-card,
+  .module-card {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .glass-card::after,
+  .quick-tool-card::after,
+  .module-card::after,
+  .glass-panel::after,
+  .glass-button::before,
+  .glass-btn::before {
+    display: none !important;
+  }
+}

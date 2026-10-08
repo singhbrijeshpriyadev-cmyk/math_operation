@@ -1,0 +1,92 @@
+/* ==========================================================================
+   OG - Module 06: Permutations & Combinations Styling
+   Light Liquid Glass: Ivory (#E8E0D2) + Gold (#B89A5A) + Deep Atlas Navy (#0E1D61)
+   ========================================================================== */
+
+.comb-module-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.comb-hero-card {
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: rgba(242, 236, 227, 0.78);
+}
+
+.comb-hero-card::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(184, 154, 90, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Structured 5-Step Derivation Card
+   -------------------------------------------------------------------------- */
+.derivation-card {
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(240, 234, 224, 0.75);
+}
+
+.derivation-step-item {
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  background: rgba(246, 241, 233, 0.85);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-left: 4px solid #B89A5A;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.derivation-step-item:hover {
+  background: #FFFFFF;
+  border-color: #B89A5A;
+  box-shadow: 0 4px 16px rgba(14, 29, 97, 0.08);
+}
+
+.derivation-label {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #B89A5A;
+}
+
+.label-input { color: rgba(14, 29, 97, 0.65); }
+.label-formula { color: #0E1D61; font-weight: 800; }
+.label-sub { color: #B89A5A; }
+.label-calc { color: #0E1D61; }
+.label-ans { color: #B89A5A; font-weight: 900; }
+
+.derivation-content {
+  font-family: var(--font-math);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0E1D61;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.derivation-content.highlight-answer {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #B89A5A;
+  text-shadow: 0 0 12px rgba(184, 154, 90, 0.3);
+}
