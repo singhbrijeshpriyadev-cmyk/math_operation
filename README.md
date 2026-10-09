@@ -1,5 +1,10 @@
 # OG — Mathematics • Calculate • Understand
 
+[![Live Demo](https://img.shields.io/badge/Live%20App-Open%20OG%20Mathematics-B89A5A?style=for-the-badge&logo=google-chrome&logoColor=white)](https://singhbrijeshpriyadev-cmyk.github.io/math_operation/)
+[![GitHub Release](https://img.shields.io/github/v/release/singhbrijeshpriyadev-cmyk/math_operation?color=0E1D61&style=for-the-badge)](https://github.com/singhbrijeshpriyadev-cmyk/math_operation/releases)
+
+> 🌐 **Permanent Live Web App:** [https://singhbrijeshpriyadev-cmyk.github.io/math_operation/](https://singhbrijeshpriyadev-cmyk.github.io/math_operation/)
+> 
 > **OG** is a premium, futuristic mathematics platform engineered for calculation, theoretical exploration, and conceptual mastery. Built from the ground up with pure modern web technologies and a bespoke **Liquid Glass** user interface.
 
 ---
